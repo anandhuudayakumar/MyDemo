@@ -1,0 +1,12 @@
+//Groovy Scripts for model.vo.OpportunitiesView
+
+package model.vo
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="AnandhuLookupView1", name="bindType")
+def bindType_AnandhuLookupView1_BindVariable_BoundParameter()
+{
+SalesStage
+}
+

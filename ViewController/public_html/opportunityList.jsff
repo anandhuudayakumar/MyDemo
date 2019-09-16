@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox id="pb1">
+    <f:facet name="toolbar">
+      <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create"
+                 disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="create"/>
+    </f:facet>
+    <af:panelGroupLayout layout="vertical" id="pgl1">
+      <af:panelHeader text="Opportunities" id="ph1">
+        <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.NameQuery.queryDescriptor}"
+                  model="#{bindings.NameQuery.queryModel}" queryListener="#{bindings.NameQuery.processQuery}"
+                  queryOperationListener="#{bindings.NameQuery.processQueryOperation}" resultComponentId="::resId1"/>
+      </af:panelHeader>
+      <af:table value="#{bindings.OpportunitiesView1.collectionModel}" var="row"
+                rows="#{bindings.OpportunitiesView1.rangeSize}"
+                emptyText="#{bindings.OpportunitiesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" selectedRowKeys="#{bindings.OpportunitiesView1.collectionModel.selectedRow}"
+                selectionListener="#{bindings.OpportunitiesView1.collectionModel.makeCurrent}" rowSelection="single"
+                fetchSize="#{bindings.OpportunitiesView1.rangeSize}" filterModel="#{bindings.NameQuery.queryDescriptor}"
+                filterVisible="true" queryListener="#{bindings.NameQuery.processQuery}" varStatus="vs" id="resId1"
+                partialTriggers="::b1" columnStretching="last">
+        <af:column sortProperty="#{bindings.OpportunitiesView1.hints.OppName.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.OpportunitiesView1.hints.OppName.label}" id="resId1c1">
+          <af:link shortDesc="#{bindings.OpportunitiesView1.hints.OppName.tooltip}" id="ot1" text="#{row.OppName}"
+                   action="edit"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.OpportunitiesView1.hints.WinProb.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.OpportunitiesView1.hints.WinProb.label}" id="resId1c2">
+          <af:outputText value="#{row.WinProb}" shortDesc="#{bindings.OpportunitiesView1.hints.WinProb.tooltip}"
+                         id="ot2">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.OpportunitiesView1.hints.WinProb.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.OpportunitiesView1.hints.SalesMeathod.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.OpportunitiesView1.hints.SalesMeathod.label}" id="resId1c4">
+          <af:outputText value="#{row.SalesMeathod}"
+                         shortDesc="#{bindings.OpportunitiesView1.hints.SalesMeathod.tooltip}" id="ot4"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.OpportunitiesView1.hints.Budgeted.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.OpportunitiesView1.hints.Budgeted.label}" id="resId1c5">
+          <af:outputText value="#{row.Budgeted}" shortDesc="#{bindings.OpportunitiesView1.hints.Budgeted.tooltip}"
+                         id="ot5"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.OpportunitiesView1.hints.BudgetAmount.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.OpportunitiesView1.hints.BudgetAmount.label}" id="resId1c6">
+          <af:outputText value="#{row.BudgetAmount}"
+                         shortDesc="#{bindings.OpportunitiesView1.hints.BudgetAmount.tooltip}" id="ot6">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.OpportunitiesView1.hints.BudgetAmount.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.OpportunitiesView1.hints.EstimatedDuration.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.OpportunitiesView1.hints.EstimatedDuration.label}"
+                   id="resId1c7">
+          <af:outputText value="#{row.EstimatedDuration}"
+                         shortDesc="#{bindings.OpportunitiesView1.hints.EstimatedDuration.tooltip}" id="ot7"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.OpportunitiesView1.hints.CloseDate.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.OpportunitiesView1.hints.CloseDate.label}" id="resId1c8">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.NameQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.CloseDate.value}"
+                          id="id1">
+              <af:convertDateTime pattern="#{bindings.OpportunitiesView1.hints.CloseDate.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:outputText value="#{row.CloseDate}" shortDesc="#{bindings.OpportunitiesView1.hints.CloseDate.tooltip}"
+                         id="ot8">
+            <af:convertDateTime pattern="#{bindings.OpportunitiesView1.hints.CloseDate.format}"/>
+          </af:outputText>
+        </af:column>
+      </af:table>
+    </af:panelGroupLayout>
+  </af:panelBox>
+</ui:composition>

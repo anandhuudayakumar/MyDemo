@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LovLookupView"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="LovLookup"
+    Entity="model.eo.LovLookup"/>
+  <ViewAttribute
+    Name="Integerlov"
+    PrecisionRule="true"
+    EntityAttrName="Integerlov"
+    EntityUsage="LovLookup"
+    AliasName="INTEGERLOV"/>
+  <ViewAttribute
+    Name="Charectorlov"
+    PrecisionRule="true"
+    EntityAttrName="Charectorlov"
+    EntityUsage="LovLookup"
+    AliasName="CHARECTORLOV"/>
+  <ViewAttribute
+    Name="Type"
+    PrecisionRule="true"
+    EntityAttrName="Type"
+    EntityUsage="LovLookup"
+    AliasName="TYPE"/>
+</ViewObject>

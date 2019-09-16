@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContactTaskInvitees"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CONTACT_TASK_INVITEES"
+  AliasName="ContactTaskInvitees"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="TaskId"
+    IsNotNull="true"
+    ColumnName="TASK_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CONTACT_TASK_INVITEES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ContactId"
+    IsNotNull="true"
+    ColumnName="CONTACT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CONTACT_TASK_INVITEES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="1000"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CONTACT_TASK_INVITEES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CONTACT_TASK_INVITEES"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CONTACT_TASK_INVITEES"/>
+  <Attribute
+    Name="ObjectVersion"
+    ColumnName="OBJECT_VERSION"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CONTACT_TASK_INVITEES"/>
+  <Attribute
+    Name="LastModifiedBy"
+    Precision="100"
+    ColumnName="LAST_MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CONTACT_TASK_INVITEES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Contacts"
+    Association="model.eo.ConinvContactsFkAssoc"
+    AssociationEnd="model.eo.ConinvContactsFkAssoc.Contacts"
+    AssociationOtherEnd="model.eo.ConinvContactsFkAssoc.ContactTaskInvitees"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Tasks"
+    Association="model.eo.TaskinvAccTasksFkAssoc"
+    AssociationEnd="model.eo.TaskinvAccTasksFkAssoc.Tasks"
+    AssociationOtherEnd="model.eo.TaskinvAccTasksFkAssoc.ContactTaskInvitees"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ContactInviteesv1Pk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CONTACT_INVITEESV1_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactTaskInvitees.TaskId"/>
+      <Item Value="model.eo.ContactTaskInvitees.ContactId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ConinvContactsFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CONTACTS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CONINV_CONTACTS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactTaskInvitees.ContactId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TaskinvAccTasksFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ACCOUNT_TASKS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TASKINV_ACC_TASKS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactTaskInvitees.TaskId"/>
+    </AttrArray>
+  </Key>
+</Entity>

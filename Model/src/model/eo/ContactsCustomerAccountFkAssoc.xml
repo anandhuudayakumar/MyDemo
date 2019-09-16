@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContactsCustomerAccountFkAssoc"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="CustomerAccount"
+    Cardinality="1"
+    Source="true"
+    Owner="model.eo.CustomerAccount">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="CustomerAccount"/>
+      <Attr Name="_foreignKey" Value="model.eo.CustomerAccount.CustomerAccountPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.CustomerAccount.AccountId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Contacts"
+    Cardinality="-1"
+    Owner="model.eo.Contacts">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Contacts"/>
+      <Attr Name="_foreignKey" Value="model.eo.Contacts.ContactsCustomerAccountFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.Contacts.AccountId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

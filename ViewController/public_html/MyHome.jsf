@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="MyHome.jsf" id="d1" binding="#{backingBeanScope.backing_MyHome.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_MyHome.f1}">
+            <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx" id="pt1"
+                             binding="#{backingBeanScope.backing_MyHome.pt1}">
+                <f:facet name="copyright"/>
+                <f:facet name="about"/>
+                <f:facet name="navigation"/>
+                <f:facet name="globalLinks"/>
+                <f:facet name="status"/>
+                <f:facet name="globalToolbar"/>
+                <f:facet name="globalSearch"/>
+                <f:facet name="globalTabs"/>
+                <f:facet name="welcome">
+                    <af:panelSpringboard id="ps1" binding="#{backingBeanScope.backing_MyHome.ps1}" displayMode="grid">
+                        <af:showDetailItem text="Opportunities" id="sdi1"
+                                           binding="#{backingBeanScope.backing_MyHome.sdi1}"
+                                           icon="/newOpportunityLogo.png">
+                            <af:region value="#{bindings.oppoprtunityList1.regionModel}" id="r1"
+                                       binding="#{backingBeanScope.backing_MyHome.r1}"/>
+                        </af:showDetailItem>
+                    </af:panelSpringboard>
+                </f:facet>
+                <f:facet name="innerToolbar"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_MyHome-->
+</f:view>

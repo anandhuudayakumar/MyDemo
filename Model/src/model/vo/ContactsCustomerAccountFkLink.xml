@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContactsCustomerAccountFkLink"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.eo.ContactsCustomerAccountFkAssoc">
+  <ViewLinkDefEnd
+    Name="CustomerAccountView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.vo.CustomerAccountView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="CustomerAccountView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.vo.CustomerAccountView.AccountId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ContactsView"
+    Cardinality="-1"
+    Owner="model.vo.ContactsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ContactsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.vo.ContactsView.AccountId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

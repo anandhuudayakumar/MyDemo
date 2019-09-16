@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContactInvitees"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CONTACT_INVITEES"
+  AliasName="ContactInvitees"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AppointmentId"
+    IsNotNull="true"
+    ColumnName="APPOINTMENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CONTACT_INVITEES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ContactId"
+    IsNotNull="true"
+    ColumnName="CONTACT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CONTACT_INVITEES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="1000"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CONTACT_INVITEES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CONTACT_INVITEES"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CONTACT_INVITEES"/>
+  <Attribute
+    Name="ObjectVersion"
+    ColumnName="OBJECT_VERSION"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CONTACT_INVITEES"/>
+  <Attribute
+    Name="LastModifiedBy"
+    Precision="100"
+    ColumnName="LAST_MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CONTACT_INVITEES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Appointment"
+    Association="model.eo.Inviteesv1AccAppointmentFkAssoc"
+    AssociationEnd="model.eo.Inviteesv1AccAppointmentFkAssoc.Appointment"
+    AssociationOtherEnd="model.eo.Inviteesv1AccAppointmentFkAssoc.ContactInvitees"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Contacts"
+    Association="model.eo.Inviteesv1ContactsFkAssoc"
+    AssociationEnd="model.eo.Inviteesv1ContactsFkAssoc.Contacts"
+    AssociationOtherEnd="model.eo.Inviteesv1ContactsFkAssoc.ContactInvitees"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Inviteesv1Pk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="INVITEESV1_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactInvitees.AppointmentId"/>
+      <Item Value="model.eo.ContactInvitees.ContactId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Inviteesv1AccAppointmentFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ACCOUNT_APPOINTMENT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INVITEESV1_ACC_APPOINTMENT_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactInvitees.AppointmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Inviteesv1ContactsFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CONTACTS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INVITEESV1_CONTACTS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactInvitees.ContactId"/>
+    </AttrArray>
+  </Key>
+</Entity>
