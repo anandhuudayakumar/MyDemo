@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox text="Create Item" id="pb1">
+    <f:facet name="toolbar">
+      <af:panelGroupLayout id="pgl1">
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
+                   id="b1" action="backCreate"/>
+        <af:button actionListener="#{bindings.Rollback.execute}" text="Back" disabled="#{!bindings.Rollback.enabled}"
+                   immediate="true" id="b2" action="backCreate">
+          <af:resetActionListener/>
+        </af:button>
+      </af:panelGroupLayout>
+    </f:facet>
+    <af:panelFormLayout id="pfl1">
+      <af:inputText value="#{bindings.ProductId.inputValue}" label="#{bindings.ProductId.hints.label}"
+                    required="#{bindings.ProductId.hints.mandatory}" columns="#{bindings.ProductId.hints.displayWidth}"
+                    maximumLength="#{bindings.ProductId.hints.precision}"
+                    shortDesc="#{bindings.ProductId.hints.tooltip}" id="it1" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.ProductId.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.Quantity.inputValue}" label="#{bindings.Quantity.hints.label}"
+                    required="#{bindings.Quantity.hints.mandatory}" columns="#{bindings.Quantity.hints.displayWidth}"
+                    maximumLength="#{bindings.Quantity.hints.precision}" shortDesc="#{bindings.Quantity.hints.tooltip}"
+                    id="it2">
+        <f:validator binding="#{bindings.Quantity.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Quantity.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.Revenue.inputValue}" label="#{bindings.Revenue.hints.label}"
+                    required="#{bindings.Revenue.hints.mandatory}" columns="#{bindings.Revenue.hints.displayWidth}"
+                    maximumLength="#{bindings.Revenue.hints.precision}" shortDesc="#{bindings.Revenue.hints.tooltip}"
+                    id="it3">
+        <f:validator binding="#{bindings.Revenue.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Revenue.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.BestCaseRevenue.inputValue}" label="#{bindings.BestCaseRevenue.hints.label}"
+                    required="#{bindings.BestCaseRevenue.hints.mandatory}"
+                    columns="#{bindings.BestCaseRevenue.hints.displayWidth}"
+                    maximumLength="#{bindings.BestCaseRevenue.hints.precision}"
+                    shortDesc="#{bindings.BestCaseRevenue.hints.tooltip}" id="it4">
+        <f:validator binding="#{bindings.BestCaseRevenue.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.BestCaseRevenue.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.WorstCaseRevenue.inputValue}" label="#{bindings.WorstCaseRevenue.hints.label}"
+                    required="#{bindings.WorstCaseRevenue.hints.mandatory}"
+                    columns="#{bindings.WorstCaseRevenue.hints.displayWidth}"
+                    maximumLength="#{bindings.WorstCaseRevenue.hints.precision}"
+                    shortDesc="#{bindings.WorstCaseRevenue.hints.tooltip}" id="it5">
+        <f:validator binding="#{bindings.WorstCaseRevenue.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.WorstCaseRevenue.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.SalesForecast.inputValue}" label="#{bindings.SalesForecast.hints.label}"
+                    required="#{bindings.SalesForecast.hints.mandatory}"
+                    columns="#{bindings.SalesForecast.hints.displayWidth}"
+                    maximumLength="#{bindings.SalesForecast.hints.precision}"
+                    shortDesc="#{bindings.SalesForecast.hints.tooltip}" id="it6">
+        <f:validator binding="#{bindings.SalesForecast.validator}"/>
+      </af:inputText>
+    </af:panelFormLayout>
+  </af:panelBox>
+</ui:composition>

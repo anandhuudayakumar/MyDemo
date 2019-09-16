@@ -8,6 +8,10 @@
               id="OpportunitiesView1Iterator"/>
     <taskFlow id="notesTaskFlow1" taskFlowId="/WEB-INF/notesTaskFlow.xml#notesTaskFlow" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="OppContactList1" taskFlowId="/WEB-INF/OppContactList.xml#OppContactList" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="oppProductTaskFlow1" taskFlowId="/WEB-INF/oppProductTaskFlow.xml#oppProductTaskFlow"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="OpportunitiesView1Iterator" id="OppName">

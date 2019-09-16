@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox id="pb1">
+    <f:facet name="toolbar">
+      <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                 disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="edit"/>
+    </f:facet>
+    <af:panelGroupLayout layout="vertical" id="pgl1">
+      <af:panelHeader text="Contacts" id="ph1">
+        <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.nameQuery.queryDescriptor}"
+                  model="#{bindings.nameQuery.queryModel}" queryListener="#{bindings.nameQuery.processQuery}"
+                  queryOperationListener="#{bindings.nameQuery.processQueryOperation}" resultComponentId="::resId1"/>
+      </af:panelHeader>
+      <af:table value="#{bindings.ContactsView3.collectionModel}" var="row" rows="#{bindings.ContactsView3.rangeSize}"
+                emptyText="#{bindings.ContactsView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" selectedRowKeys="#{bindings.ContactsView3.collectionModel.selectedRow}"
+                selectionListener="#{bindings.ContactsView3.collectionModel.makeCurrent}" rowSelection="single"
+                fetchSize="#{bindings.ContactsView3.rangeSize}" filterModel="#{bindings.nameQuery.queryDescriptor}"
+                filterVisible="true" queryListener="#{bindings.nameQuery.processQuery}" varStatus="vs" id="resId1"
+                partialTriggers="::b1" columnStretching="last">
+        <af:column sortProperty="#{bindings.ContactsView3.hints.ContactName.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ContactsView3.hints.ContactName.label}" id="resId1c1">
+          <af:outputText value="#{row.ContactName}" shortDesc="#{bindings.ContactsView3.hints.ContactName.tooltip}"
+                         id="ot1"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.ContactsView3.hints.Title.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ContactsView3.hints.Title.label}" id="resId1c2">
+          <af:outputText value="#{row.Title}" shortDesc="#{bindings.ContactsView3.hints.Title.tooltip}" id="ot2"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.ContactsView3.hints.WorkPhone.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ContactsView3.hints.WorkPhone.label}" id="resId1c3">
+          <af:outputText value="#{row.WorkPhone}" shortDesc="#{bindings.ContactsView3.hints.WorkPhone.tooltip}"
+                         id="ot3">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.ContactsView3.hints.WorkPhone.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ContactsView3.hints.Email.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ContactsView3.hints.Email.label}" id="resId1c4">
+          <af:outputText value="#{row.Email}" shortDesc="#{bindings.ContactsView3.hints.Email.tooltip}" id="ot4"/>
+        </af:column>
+      </af:table>
+    </af:panelGroupLayout>
+  </af:panelBox>
+</ui:composition>

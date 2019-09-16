@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="bindContactName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="Contacts"
     Entity="model.eo.Contacts"/>
@@ -28,7 +32,14 @@
     PrecisionRule="true"
     EntityAttrName="ContactName"
     EntityUsage="Contacts"
-    AliasName="CONTACT_NAME"/>
+    AliasName="CONTACT_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.ContactsView.ContactName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Title"
     PrecisionRule="true"
@@ -70,13 +81,27 @@
     PrecisionRule="true"
     EntityAttrName="WorkPhone"
     EntityUsage="Contacts"
-    AliasName="WORK_PHONE"/>
+    AliasName="WORK_PHONE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.ContactsView.WorkPhone_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MobilePhone"
     PrecisionRule="true"
     EntityAttrName="MobilePhone"
     EntityUsage="Contacts"
-    AliasName="MOBILE_PHONE"/>
+    AliasName="MOBILE_PHONE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.ContactsView.MobilePhone_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Email"
     PrecisionRule="true"
@@ -94,7 +119,14 @@
     PrecisionRule="true"
     EntityAttrName="SslesrepId"
     EntityUsage="Contacts"
-    AliasName="SSLESREP_ID"/>
+    AliasName="SSLESREP_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="OppurtunityId"
     PrecisionRule="true"
@@ -106,31 +138,102 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="Contacts"
-    AliasName="CREATED_BY"/>
+    AliasName="CREATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="Contacts"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ModifiedDate"
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="Contacts"
-    AliasName="MODIFIED_DATE"/>
+    AliasName="MODIFIED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ObjectVersion"
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="Contacts"
-    AliasName="OBJECT_VERSION"/>
+    AliasName="OBJECT_VERSION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastModifiedBy"
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="Contacts"
-    AliasName="LAST_MODIFIED_BY"/>
+    AliasName="LAST_MODIFIED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="name"
+    ViewObjectName="model.vo.ContactsView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="name_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="ContactName"
+        ViewAttribute="ContactName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":bindContactName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ContactInteractionView"
     ViewLink="model.vo.ContinvcontactsFkv2Link"
@@ -156,4 +259,8 @@
     ViewLink="model.vo.ConinvContactsFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

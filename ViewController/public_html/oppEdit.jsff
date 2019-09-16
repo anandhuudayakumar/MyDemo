@@ -2,21 +2,27 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelBox id="pb1" text="Edit Opportunity">
-    <f:facet name="toolbar">
-      <af:panelGroupLayout id="pgl1">
-        <af:button actionListener="#{bindings.Commit.execute}" text="Save" 
-                   id="b1" action="back"/>
-        <af:button actionListener="#{bindings.Rollback.execute}" text="Back" 
-                   immediate="true" id="b2" action="back">
-          <af:resetActionListener/>
-        </af:button>
-        <f:facet name="separator">
-          <af:spacer width="10" height="10" id="s1"/>
-        </f:facet>
-      </af:panelGroupLayout>
-    </f:facet>
+    <f:facet name="toolbar"/>
     <af:panelTabbed position="start" id="pt1">
-      <af:showDetailItem id="tab1" icon="/EditIcon.png">
+      <af:showDetailItem id="tab1" icon="/EditIcon.png" text="Edit">
+        <af:panelHeader text=" " id="ph1">
+          <f:facet name="context"/>
+          <f:facet name="toolbar">
+            <af:panelGroupLayout id="pgl1">
+              <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b1" action="back"/>
+              <af:button actionListener="#{bindings.Rollback.execute}" text="Back" immediate="true" id="b2"
+                         action="back">
+                <af:resetActionListener/>
+              </af:button>
+              <f:facet name="separator">
+                <af:spacer width="10" height="10" id="s1"/>
+              </f:facet>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="menuBar"/>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+        </af:panelHeader>
         <af:panelFormLayout id="pfl1" rows="4">
           <af:inputText value="#{bindings.OppName.inputValue}" label="#{bindings.OppName.hints.label}"
                         required="#{bindings.OppName.hints.mandatory}" columns="#{bindings.OppName.hints.displayWidth}"
@@ -105,10 +111,14 @@
         </af:panelFormLayout>
         <f:facet name="toolbar"/>
       </af:showDetailItem>
-      <af:showDetailItem id="tab2" text="Contact" icon="/contactIcon.png"/>
+      <af:showDetailItem id="tab2" text="Contact" icon="/contactIcon.png">
+        <af:region value="#{bindings.OppContactList1.regionModel}" id="r2"/>
+      </af:showDetailItem>
       <af:showDetailItem id="tab3" text="Appointment" icon="/appointmentIcon.png"/>
       <af:showDetailItem id="tab4" text="Task" icon="/tasksIcon.png"/>
-      <af:showDetailItem id="tab5" text="Product" icon="/ItemsIcon.png"/>
+      <af:showDetailItem id="tab5" text="Product" icon="/ItemsIcon.png">
+        <af:region value="#{bindings.oppProductTaskFlow1.regionModel}" id="r3"/>
+      </af:showDetailItem>
       <af:showDetailItem text="Interaction" id="sdi1" icon="/InteractionIcon.jpg"/>
       <af:showDetailItem id="tab6" text="Notes" icon="/notesIcon.png">
         <af:region value="#{bindings.notesTaskFlow1.regionModel}" id="r1"/>

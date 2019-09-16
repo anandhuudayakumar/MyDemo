@@ -15,7 +15,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>oppEdit&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">97.00391</property>
+         name="y">96.87109</property>
       <property
          name="page">/oppEdit.jsff</property>
       <property
@@ -44,6 +44,6 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">R50,146.0,96.9375,382.0,137.60156,L50</property>
+         name="sdm:polyPoints">R50,146.0,96.80469,382.0,137.60156,L50</property>
    </ControlFlowCase>
 </SDM>

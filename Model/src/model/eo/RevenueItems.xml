@@ -12,7 +12,6 @@
   BindingStyle="OracleName">
   <Attribute
     Name="RevenueId"
-    IsNotNull="true"
     ColumnName="REVENUE_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"

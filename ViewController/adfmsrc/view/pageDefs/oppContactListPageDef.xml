@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="oppContactListPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ContactsView3" RangeSize="25" DataControl="AppModuleDataControl" id="ContactsView3Iterator"/>
+    <searchRegion Criteria="name" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContactsView3Iterator" id="nameQuery"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ContactsView3Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="ContactsView3Iterator" id="ContactsView3">
+      <nodeDefinition DefName="model.vo.ContactsView" Name="ContactsView30">
+        <AttrNames>
+          <Item Value="ContactName"/>
+          <Item Value="Title"/>
+          <Item Value="WorkPhone"/>
+          <Item Value="Email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

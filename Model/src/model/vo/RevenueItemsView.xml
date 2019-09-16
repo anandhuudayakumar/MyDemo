@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="bindProductName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="RevenueItems"
     Entity="model.eo.RevenueItems"/>
@@ -40,25 +44,53 @@
     PrecisionRule="true"
     EntityAttrName="WinProb"
     EntityUsage="RevenueItems"
-    AliasName="WIN_PROB"/>
+    AliasName="WIN_PROB">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BestCaseRevenue"
     PrecisionRule="true"
     EntityAttrName="BestCaseRevenue"
     EntityUsage="RevenueItems"
-    AliasName="BEST_CASE_REVENUE"/>
+    AliasName="BEST_CASE_REVENUE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.RevenueItemsView.BestCaseRevenue_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="WorstCaseRevenue"
     PrecisionRule="true"
     EntityAttrName="WorstCaseRevenue"
     EntityUsage="RevenueItems"
-    AliasName="WORST_CASE_REVENUE"/>
+    AliasName="WORST_CASE_REVENUE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.RevenueItemsView.WorstCaseRevenue_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SalesForecast"
     PrecisionRule="true"
     EntityAttrName="SalesForecast"
     EntityUsage="RevenueItems"
-    AliasName="SALES_FORECAST"/>
+    AliasName="SALES_FORECAST">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.RevenueItemsView.SalesForecast_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="OppId"
     PrecisionRule="true"
@@ -71,41 +103,130 @@
     PrecisionRule="true"
     EntityAttrName="ProductId"
     EntityUsage="RevenueItems"
-    AliasName="PRODUCT_ID"/>
+    AliasName="PRODUCT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.RevenueItemsView.ProductId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="RevenueItems"
-    AliasName="CREATED_BY"/>
+    AliasName="CREATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="RevenueItems"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ModifiedDate"
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="RevenueItems"
-    AliasName="MODIFIED_DATE"/>
+    AliasName="MODIFIED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ObjectVersion"
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="RevenueItems"
-    AliasName="OBJECT_VERSION"/>
+    AliasName="OBJECT_VERSION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ProductCategoryId"
     PrecisionRule="true"
     EntityAttrName="ProductCategoryId"
     EntityUsage="RevenueItems"
-    AliasName="PRODUCT_CATEGORY_ID"/>
+    AliasName="PRODUCT_CATEGORY_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastModifiedBy"
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="RevenueItems"
-    AliasName="LAST_MODIFIED_BY"/>
+    AliasName="LAST_MODIFIED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="name"
+    ViewObjectName="model.vo.RevenueItemsView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="name_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="ProductId"
+        ViewAttribute="ProductId"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":bindProductName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

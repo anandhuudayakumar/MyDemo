@@ -20,18 +20,17 @@
   <ListBinding
     Name="LOV_ContactId"
     ListVOName="ContactsView1"
-    ComboRowCountHint="10"
     NullValueFlag="none"
-    MRUCount="0">
+    MRUCount="0"
+    ComboRowCountHint="10">
     <AttrArray Name="AttrNames">
       <Item Value="ContactId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="ContactId"/>
-    </AttrArray>
     <AttrArray Name="ListAttrNames">
-      <Item Value="ContactId"/>
+      <Item Value="ContactName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ContactName"/>
     </AttrArray>
     <DisplayCriteria

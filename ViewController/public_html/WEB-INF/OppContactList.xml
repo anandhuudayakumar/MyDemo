@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="OppContactList">
+    <default-activity>oppContactList</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="oppContactList">
+      <page>/oppContactList.jsff</page>
+    </view>
+    <view id="oppContactEdit">
+      <page>/oppContactEdit.jsff</page>
+    </view>
+    <view id="oppContactCreate"></view>
+    <control-flow-rule id="__1">
+      <from-activity-id>oppContactList</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>oppContactEdit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>create</from-outcome>
+        <to-activity-id>oppContactCreate</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>oppContactEdit</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>backEdit</from-outcome>
+        <to-activity-id>oppContactList</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>oppContactCreate</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>backCreate</from-outcome>
+        <to-activity-id>oppContactList</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

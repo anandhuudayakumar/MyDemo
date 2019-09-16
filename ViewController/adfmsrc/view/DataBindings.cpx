@@ -12,6 +12,11 @@
     <page path="/create.jsff" usageId="view_createPageDef"/>
     <page path="/oppEdit.jsff" usageId="view_oppEditPageDef"/>
     <page path="/notesList.jsff" usageId="view_notesListPageDef"/>
+    <page path="/oppContactList.jsff" usageId="view_oppContactListPageDef"/>
+    <page path="/oppContactEdit.jsff" usageId="view_oppContactEditPageDef"/>
+    <page path="/productList.jsff" usageId="view_productListPageDef"/>
+    <page path="/productEdit.jsff" usageId="view_productEditPageDef"/>
+    <page path="/productCreate.jsff" usageId="view_productCreatePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_opportunityListPageDef" path="view.pageDefs.opportunityListPageDef"/>
@@ -19,6 +24,11 @@
     <page id="view_createPageDef" path="view.pageDefs.createPageDef"/>
     <page id="view_oppEditPageDef" path="view.pageDefs.oppEditPageDef"/>
     <page id="view_notesListPageDef" path="view.pageDefs.notesListPageDef"/>
+    <page id="view_oppContactListPageDef" path="view.pageDefs.oppContactListPageDef"/>
+    <page id="view_oppContactEditPageDef" path="view.pageDefs.oppContactEditPageDef"/>
+    <page id="view_productListPageDef" path="view.pageDefs.productListPageDef"/>
+    <page id="view_productEditPageDef" path="view.pageDefs.productEditPageDef"/>
+    <page id="view_productCreatePageDef" path="view.pageDefs.productCreatePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.eo"
