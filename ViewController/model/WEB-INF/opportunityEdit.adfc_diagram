@@ -44,6 +44,6 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">R56,L49</property>
+         name="sdm:polyPoints">R50,146.0,96.9375,382.0,137.60156,L50</property>
    </ControlFlowCase>
 </SDM>

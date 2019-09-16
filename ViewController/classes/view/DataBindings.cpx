@@ -11,12 +11,14 @@
     <page path="/MyHome.jsf" usageId="view_MyHomePageDef"/>
     <page path="/create.jsff" usageId="view_createPageDef"/>
     <page path="/oppEdit.jsff" usageId="view_oppEditPageDef"/>
+    <page path="/notesList.jsff" usageId="view_notesListPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_opportunityListPageDef" path="view.pageDefs.opportunityListPageDef"/>
     <page id="view_MyHomePageDef" path="view.pageDefs.MyHomePageDef"/>
     <page id="view_createPageDef" path="view.pageDefs.createPageDef"/>
     <page id="view_oppEditPageDef" path="view.pageDefs.oppEditPageDef"/>
+    <page id="view_notesListPageDef" path="view.pageDefs.notesListPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.eo"

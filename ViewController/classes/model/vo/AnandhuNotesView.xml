@@ -26,28 +26,14 @@
     PrecisionRule="true"
     EntityAttrName="Noteid"
     EntityUsage="AnandhuNotes"
-    AliasName="NOTEID">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="30"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="NOTEID"/>
   <ViewAttribute
     Name="Oppid"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Oppid"
     EntityUsage="AnandhuNotes"
-    AliasName="OPPID">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="30"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="OPPID"/>
   <ViewAttribute
     Name="Createddate"
     PrecisionRule="true"
@@ -98,8 +84,6 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.vo.AnandhuNotesView.Data_LABEL"/>
-        <DISPLAYWIDTH
-          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -113,10 +97,6 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.vo.AnandhuNotesView.Notename_LABEL"/>
-        <DISPLAYWIDTH
-          Value="30"/>
-        <DISPLAYHEIGHT
-          Value="5"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -130,8 +110,6 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.vo.AnandhuNotesView.Notes_LABEL"/>
-        <DISPLAYWIDTH
-          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -140,14 +118,7 @@
     PrecisionRule="true"
     EntityAttrName="Time"
     EntityUsage="AnandhuNotes"
-    AliasName="TIME">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="30"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="TIME"/>
   <ViewCriteria
     Name="name"
     ViewObjectName="model.vo.AnandhuNotesView"

@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="bindName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="AnandhuNotes"
     Entity="model.eo.AnandhuNotes"/>
@@ -22,55 +26,166 @@
     PrecisionRule="true"
     EntityAttrName="Noteid"
     EntityUsage="AnandhuNotes"
-    AliasName="NOTEID"/>
+    AliasName="NOTEID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Oppid"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Oppid"
     EntityUsage="AnandhuNotes"
-    AliasName="OPPID"/>
+    AliasName="OPPID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Createddate"
     PrecisionRule="true"
     EntityAttrName="Createddate"
     EntityUsage="AnandhuNotes"
-    AliasName="CREATEDDATE"/>
+    AliasName="CREATEDDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Modifieddate"
     PrecisionRule="true"
     EntityAttrName="Modifieddate"
     EntityUsage="AnandhuNotes"
-    AliasName="MODIFIEDDATE"/>
+    AliasName="MODIFIEDDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Modifiedpersion"
     PrecisionRule="true"
     EntityAttrName="Modifiedpersion"
     EntityUsage="AnandhuNotes"
-    AliasName="MODIFIEDPERSION"/>
+    AliasName="MODIFIEDPERSION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Data"
     IsQueriable="false"
     PrecisionRule="true"
     EntityAttrName="Data"
     EntityUsage="AnandhuNotes"
-    AliasName="DATA"/>
+    AliasName="DATA">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.AnandhuNotesView.Data_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Notename"
     PrecisionRule="true"
     EntityAttrName="Notename"
     EntityUsage="AnandhuNotes"
-    AliasName="NOTENAME"/>
+    AliasName="NOTENAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.AnandhuNotesView.Notename_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <DISPLAYHEIGHT
+          Value="5"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Notes"
     PrecisionRule="true"
     EntityAttrName="Notes"
     EntityUsage="AnandhuNotes"
-    AliasName="NOTES"/>
+    AliasName="NOTES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.AnandhuNotesView.Notes_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Time"
     PrecisionRule="true"
     EntityAttrName="Time"
     EntityUsage="AnandhuNotes"
-    AliasName="TIME"/>
+    AliasName="TIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="name"
+    ViewObjectName="model.vo.AnandhuNotesView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AnandhuNotesViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Notename"
+        ViewAttribute="Notename"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":bindName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

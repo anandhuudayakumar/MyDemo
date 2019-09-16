@@ -6,10 +6,10 @@
     <variableIterator id="variables"/>
     <iterator Binds="OpportunitiesView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="OpportunitiesView1Iterator"/>
+    <taskFlow id="notesTaskFlow1" taskFlowId="/WEB-INF/notesTaskFlow.xml#notesTaskFlow" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <attributeValues IterBinding="OpportunitiesView1Iterator" id="OppName">
       <AttrNames>
         <Item Value="OppName"/>
@@ -54,5 +54,7 @@
         <Item Value="CloseDate"/>
       </AttrNames>
     </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
   </bindings>
 </pageDefinition>

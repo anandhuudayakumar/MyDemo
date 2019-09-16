@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox id="pb1">
+    <f:facet name="toolbar">
+      <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create"
+                 disabled="#{!bindings.CreateInsert.enabled}" id="b1">
+        <af:showPopupBehavior popupId="p1"/>
+      </af:button>
+    </f:facet>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached">
+      <af:dialog id="d1">
+        <f:facet name="buttonBar"/>
+      </af:dialog>
+      <af:panelBox text="Create Note" id="pb2">
+        <f:facet name="toolbar"/>
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.Notename.inputValue}" label="#{bindings.Notename.hints.label}"
+                        contentStyle="width:240px;"
+                        required="#{bindings.Notename.hints.mandatory}"
+                        columns="#{bindings.Notename.hints.displayWidth}"
+                        maximumLength="#{bindings.Notename.hints.precision}"
+                        shortDesc="#{bindings.Notename.hints.tooltip}" id="it1">
+            <f:validator binding="#{bindings.Notename.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.Notes.inputValue}" label="#{bindings.Notes.hints.label}"
+                        required="#{bindings.Notes.hints.mandatory}" columns="#{bindings.Notes.hints.displayWidth}"
+                        maximumLength="#{bindings.Notes.hints.precision}" shortDesc="#{bindings.Notes.hints.tooltip}"
+                        id="it2"
+                        contentStyle="width:240px;" rows="10">
+            <f:validator binding="#{bindings.Notes.validator}"/>
+          </af:inputText>
+          <af:inputFile value="#{bindings.Data.inputValue}" label="#{bindings.Data.hints.label}"
+                        required="#{bindings.Data.hints.mandatory}" columns="#{bindings.Data.hints.displayWidth}"
+                        shortDesc="#{bindings.Data.hints.tooltip}" id="it3">
+            <f:validator binding="#{bindings.Data.validator}"/>
+          </af:inputFile>
+          <af:inputDate value="#{bindings.Time.inputValue}" label="#{bindings.Time.hints.label}"
+                        required="#{bindings.Time.hints.mandatory}" columns="#{bindings.Time.hints.displayWidth}"
+                        shortDesc="#{bindings.Time.hints.tooltip}" id="id2">
+            <f:validator binding="#{bindings.Time.validator}"/>
+            <af:convertDateTime pattern="#{bindings.Time.format}"/>
+          </af:inputDate>
+        </af:panelFormLayout>
+      </af:panelBox>
+    </af:popup>
+    <af:panelGroupLayout layout="vertical" id="pgl1">
+      <af:panelHeader text="Notes" id="ph1">
+        <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.nameQuery.queryDescriptor}"
+                  model="#{bindings.nameQuery.queryModel}" queryListener="#{bindings.nameQuery.processQuery}"
+                  queryOperationListener="#{bindings.nameQuery.processQueryOperation}" resultComponentId="::resId1"/>
+      </af:panelHeader>
+      <af:table value="#{bindings.AnandhuNotesView2.collectionModel}" var="row"
+                rows="#{bindings.AnandhuNotesView2.rangeSize}"
+                emptyText="#{bindings.AnandhuNotesView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" selectedRowKeys="#{bindings.AnandhuNotesView2.collectionModel.selectedRow}"
+                selectionListener="#{bindings.AnandhuNotesView2.collectionModel.makeCurrent}" rowSelection="single"
+                fetchSize="#{bindings.AnandhuNotesView2.rangeSize}" filterModel="#{bindings.nameQuery.queryDescriptor}"
+                filterVisible="true" queryListener="#{bindings.nameQuery.processQuery}" varStatus="vs" id="resId1"
+                partialTriggers="::b1" columnStretching="last">
+        <af:column sortProperty="#{bindings.AnandhuNotesView2.hints.Notename.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.AnandhuNotesView2.hints.Notename.label}" id="resId1c1">
+          <af:outputText value="#{row.Notename}" shortDesc="#{bindings.AnandhuNotesView2.hints.Notename.tooltip}"
+                         id="ot1"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.AnandhuNotesView2.hints.Notes.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.AnandhuNotesView2.hints.Notes.label}" id="resId1c2">
+          <af:outputText value="#{row.Notes}" shortDesc="#{bindings.AnandhuNotesView2.hints.Notes.tooltip}" id="ot2"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.AnandhuNotesView2.hints.Data.name}" sortable="true"
+                   headerText="#{bindings.AnandhuNotesView2.hints.Data.label}" filterable="true" id="resId1c3">
+          <af:outputText value="#{row.Data}" shortDesc="#{bindings.AnandhuNotesView2.hints.Data.tooltip}" id="ot3"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.AnandhuNotesView2.hints.Time.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.AnandhuNotesView2.hints.Time.label}" id="resId1c4">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.nameQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.Time.value}"
+                          id="id1">
+              <af:convertDateTime pattern="#{bindings.AnandhuNotesView2.hints.Time.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:outputText value="#{row.Time}" shortDesc="#{bindings.AnandhuNotesView2.hints.Time.tooltip}" id="ot4">
+            <af:convertDateTime pattern="#{bindings.AnandhuNotesView2.hints.Time.format}"/>
+          </af:outputText>
+        </af:column>
+      </af:table>
+    </af:panelGroupLayout>
+  </af:panelBox>
+</ui:composition>
