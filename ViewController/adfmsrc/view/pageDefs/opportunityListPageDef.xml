@@ -38,5 +38,10 @@
     <action IterBinding="OpportunitiesView1Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
     <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="OpportunitiesView1Iterator" id="OppName">
+      <AttrNames>
+        <Item Value="OppName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

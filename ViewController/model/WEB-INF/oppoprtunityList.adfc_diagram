@@ -46,7 +46,7 @@
       <property
          name="fromOutcome">edit</property>
       <property
-         name="sdm:polyPoints">R37,311.28403,277.36945,495.9064,146.10156,L50</property>
+         name="sdm:polyPoints">R42,309.0,281.9375,498.19043,146.10156,L50</property>
    </ControlFlowCase>
    <View
       id="View5">
@@ -73,7 +73,7 @@
       <property
          name="fromOutcome">create</property>
       <property
-         name="sdm:polyPoints">R50,313.5808,288.9375,458.71597,349.88394,L43</property>
+         name="sdm:polyPoints">R50,310.3979,288.9375,461.0,352.16797,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -83,6 +83,6 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">L57,456.40244,361.452,311.28403,300.50555,R63</property>
+         name="sdm:polyPoints">L54,459.59613,359.16797,309.0,295.9375,R58</property>
    </ControlFlowCase>
 </SDM>
