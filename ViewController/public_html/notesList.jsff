@@ -5,7 +5,7 @@
     <f:facet name="toolbar">
       <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create"
                  disabled="#{!bindings.CreateInsert.enabled}" id="b1">
-        <af:showPopupBehavior popupId="p1"/>
+        <af:showPopupBehavior popupId="p1" triggerType="action"/>
       </af:button>
     </f:facet>
     <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached">

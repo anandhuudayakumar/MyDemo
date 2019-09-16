@@ -2,25 +2,21 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelBox id="pb1" text="Edit Opportunity">
-    <f:facet name="toolbar"/>
+    <f:facet name="toolbar">
+      <af:panelGroupLayout id="pgl1">
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" 
+                   id="b1" action="back"/>
+        <af:button actionListener="#{bindings.Rollback.execute}" text="Back" 
+                   immediate="true" id="b2" action="back">
+          <af:resetActionListener/>
+        </af:button>
+        <f:facet name="separator">
+          <af:spacer width="10" height="10" id="s1"/>
+        </f:facet>
+      </af:panelGroupLayout>
+    </f:facet>
     <af:panelTabbed position="start" id="pt1">
       <af:showDetailItem id="tab1" icon="/EditIcon.png">
-        <af:panelHeader text="Edit Opportunity" id="ph1">
-          <f:facet name="context"/>
-          <f:facet name="toolbar">
-            <af:panelGroupLayout id="pgl1">
-              <af:button actionListener="#{bindings.Commit.execute}" text="Save"
-                         disabled="#{!bindings.Commit.enabled}" id="b1" action="back"/>
-              <af:button actionListener="#{bindings.Rollback.execute}" text="Back"
-                         disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b2" action="back">
-                <af:resetActionListener/>
-              </af:button>
-            </af:panelGroupLayout>
-          </f:facet>
-          <f:facet name="menuBar"/>
-          <f:facet name="legend"/>
-          <f:facet name="info"/>
-        </af:panelHeader>
         <af:panelFormLayout id="pfl1" rows="4">
           <af:inputText value="#{bindings.OppName.inputValue}" label="#{bindings.OppName.hints.label}"
                         required="#{bindings.OppName.hints.mandatory}" columns="#{bindings.OppName.hints.displayWidth}"
@@ -107,6 +103,7 @@
           </af:inputDate>
           <af:inputText label="Label 1" id="it6"/>
         </af:panelFormLayout>
+        <f:facet name="toolbar"/>
       </af:showDetailItem>
       <af:showDetailItem id="tab2" text="Contact" icon="/contactIcon.png"/>
       <af:showDetailItem id="tab3" text="Appointment" icon="/appointmentIcon.png"/>
