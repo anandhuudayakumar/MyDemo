@@ -37,6 +37,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.vo.ContactsView.ContactName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -257,6 +259,11 @@
   <ViewLinkAccessor
     Name="ContactTaskInviteesView"
     ViewLink="model.vo.ConinvContactsFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ContactOppurtunityView1"
+    ViewLink="model.vo.oppContactMainContact"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

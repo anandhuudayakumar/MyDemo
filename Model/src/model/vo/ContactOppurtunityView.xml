@@ -126,9 +126,4 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewLinkAccessor
-    Name="ContactsView"
-    ViewLink="model.vo.oppContactMainContact"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
 </ViewObject>

@@ -10,32 +10,31 @@
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="ContactOppurtunity1"
+    Name="Contacts"
     Cardinality="1"
     Source="true"
-    Owner="model.eo.ContactOppurtunity"
+    Owner="model.eo.Contacts"
     LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_minCardinality" Value="1"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="ContactOppurtunity1"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.eo.ContactOppurtunity.ContactId"/>
-    </AttrArray>
-  </AssociationEnd>
-  <AssociationEnd
-    Name="Contacts1"
-    Cardinality="-1"
-    Owner="model.eo.Contacts">
-    <DesignTime>
-      <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="Contacts1"/>
+      <Attr Name="_finderName" Value="Contacts"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.eo.Contacts.ContactId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="ContactOppurtunity"
+    Cardinality="-1"
+    Owner="model.eo.ContactOppurtunity">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.ContactOppurtunity.ContactId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

@@ -104,7 +104,8 @@
     Name="LOV_Accountid"
     ListVOName="CustomerAccountView1"
     NullValueFlag="none"
-    MRUCount="0">
+    MRUCount="0"
+    ComboRowCountHint="10">
     <AttrArray Name="AttrNames">
       <Item Value="Accountid"/>
     </AttrArray>
@@ -119,7 +120,8 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="AccountName"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Hint="hide"/>
   </ListBinding>
   <ListBinding
     Name="LOV_SalesMeathod"
@@ -472,7 +474,7 @@
         <LABEL
           ResId="model.vo.OpportunitiesView.Accountid_LABEL"/>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

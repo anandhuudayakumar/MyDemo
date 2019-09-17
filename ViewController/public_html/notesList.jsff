@@ -8,7 +8,8 @@
         <af:showPopupBehavior popupId="p1" triggerType="action"/>
       </af:button>
     </f:facet>
-    <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached">
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached"
+              popupFetchListener="#{backingBeanScope.NoteCommit.noteCreateFetchListner}">
       <af:dialog id="d1" dialogListener="#{backingBeanScope.NoteCommit.doNoteCommit}">
         <f:facet name="buttonBar"/>
       </af:dialog>
@@ -60,8 +61,9 @@
                 partialTriggers="::b1" columnStretching="last">
         <af:column sortProperty="#{bindings.AnandhuNotesView2.hints.Notename.name}" filterable="true" sortable="true"
                    headerText="#{bindings.AnandhuNotesView2.hints.Notename.label}" id="resId1c1">
-          <af:outputText value="#{row.Notename}" shortDesc="#{bindings.AnandhuNotesView2.hints.Notename.tooltip}"
-                         id="ot1"/>
+          <af:link shortDesc="#{bindings.AnandhuNotesView2.hints.Notename.tooltip}" id="ot1" text="#{row.Notename}">
+            <af:showPopupBehavior popupId="::p2" triggerType="action"/>
+          </af:link>
         </af:column>
         <af:column sortProperty="#{bindings.AnandhuNotesView2.hints.Notes.name}" filterable="true" sortable="true"
                    headerText="#{bindings.AnandhuNotesView2.hints.Notes.label}" id="resId1c2">
@@ -85,5 +87,37 @@
         </af:column>
       </af:table>
     </af:panelGroupLayout>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p2">
+      <af:dialog id="d2" dialogListener="#{backingBeanScope.NoteCommit.noteEditFuction}">
+        <f:facet name="buttonBar"/>
+        <af:panelFormLayout id="pfl2">
+          <af:inputText value="#{bindings.Notename1.inputValue}" label="#{bindings.Notename1.hints.label}"
+                        required="#{bindings.Notename1.hints.mandatory}"
+                        columns="#{bindings.Notename1.hints.displayWidth}"
+                        maximumLength="#{bindings.Notename1.hints.precision}"
+                        shortDesc="#{bindings.Notename1.hints.tooltip}" id="it4" contentStyle="width:240px;">
+            <f:validator binding="#{bindings.Notename1.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.Data1.inputValue}" label="#{bindings.Data1.hints.label}"
+                        required="#{bindings.Data1.hints.mandatory}" columns="#{bindings.Data1.hints.displayWidth}"
+                        maximumLength="#{bindings.Data1.hints.precision}" shortDesc="#{bindings.Data1.hints.tooltip}"
+                        id="it5" contentStyle="width:240px;" rows="5">
+            <f:validator binding="#{bindings.Data1.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.Notes1.inputValue}" label="#{bindings.Notes1.hints.label}"
+                        required="#{bindings.Notes1.hints.mandatory}" columns="#{bindings.Notes1.hints.displayWidth}"
+                        maximumLength="#{bindings.Notes1.hints.precision}" shortDesc="#{bindings.Notes1.hints.tooltip}"
+                        id="it6" contentStyle="width:240px;">
+            <f:validator binding="#{bindings.Notes1.validator}"/>
+          </af:inputText>
+          <af:inputDate value="#{bindings.Time1.inputValue}" label="#{bindings.Time1.hints.label}"
+                        required="#{bindings.Time1.hints.mandatory}" columns="#{bindings.Time1.hints.displayWidth}"
+                        shortDesc="#{bindings.Time1.hints.tooltip}" id="id3" contentStyle="width:240px;">
+            <f:validator binding="#{bindings.Time1.validator}"/>
+            <af:convertDateTime pattern="#{bindings.Time1.format}"/>
+          </af:inputDate>
+        </af:panelFormLayout>
+      </af:dialog>
+    </af:popup>
   </af:panelBox>
 </ui:composition>

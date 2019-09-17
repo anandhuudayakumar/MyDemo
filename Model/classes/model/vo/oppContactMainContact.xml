@@ -13,21 +13,9 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="ContactOppurtunityView1"
+    Name="ContactsView_2"
     Cardinality="1"
     Source="true"
-    Owner="model.vo.ContactOppurtunityView">
-    <DesignTime>
-      <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="ContactOppurtunityView1"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.vo.ContactOppurtunityView.ContactId"/>
-    </AttrArray>
-  </ViewLinkDefEnd>
-  <ViewLinkDefEnd
-    Name="ContactsView"
-    Cardinality="-1"
     Owner="model.vo.ContactsView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
@@ -35,6 +23,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.vo.ContactsView.ContactId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ContactOppurtunityView1"
+    Cardinality="-1"
+    Owner="model.vo.ContactOppurtunityView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ContactOppurtunityView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.vo.ContactOppurtunityView.ContactId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

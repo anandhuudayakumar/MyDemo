@@ -8,6 +8,8 @@
               id="AnandhuNotesView2Iterator"/>
     <searchRegion Criteria="name" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="AnandhuNotesView2Iterator" id="nameQuery"/>
+    <iterator Binds="AnandhuNotesView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="AnandhuNotesView1Iterator"/>
   </executables>
   <bindings>
     <action IterBinding="AnandhuNotesView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
@@ -43,5 +45,25 @@
       </AttrNames>
     </attributeValues>
     <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="AnandhuNotesView1Iterator" id="Notename1">
+      <AttrNames>
+        <Item Value="Notename"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AnandhuNotesView1Iterator" id="Data1">
+      <AttrNames>
+        <Item Value="Data"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AnandhuNotesView1Iterator" id="Notes1">
+      <AttrNames>
+        <Item Value="Notes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AnandhuNotesView1Iterator" id="Time1">
+      <AttrNames>
+        <Item Value="Time"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
