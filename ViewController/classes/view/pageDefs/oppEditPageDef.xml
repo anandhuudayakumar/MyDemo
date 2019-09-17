@@ -26,8 +26,6 @@
         <Item Value="WinProb"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="OpportunitiesView1Iterator" StaticList="false" Uses="LOV_PrimaryContact" id="PrimaryContact"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="OpportunitiesView1Iterator" id="BudgetAmount">
       <AttrNames>
         <Item Value="BudgetAmount"/>
@@ -60,5 +58,7 @@
     </attributeValues>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <listOfValues IterBinding="OpportunitiesView1Iterator" StaticList="false" Uses="LOV_PrimaryContact"
+                  id="PrimaryContact1"/>
   </bindings>
 </pageDefinition>

@@ -43,12 +43,17 @@
             <f:validator binding="#{bindings.WinProb.validator}"/>
             <af:convertNumber groupingUsed="false" pattern="#{bindings.WinProb.format}"/>
           </af:inputText>
-          <af:selectOneChoice value="#{bindings.PrimaryContact.inputValue}" label="#{bindings.PrimaryContact.label}"
-                              required="#{bindings.PrimaryContact.hints.mandatory}"
-                              shortDesc="#{bindings.PrimaryContact.hints.tooltip}" id="soc2">
-            <f:selectItems value="#{bindings.PrimaryContact.items}" id="si2"/>
-            <f:validator binding="#{bindings.PrimaryContact.validator}"/>
-          </af:selectOneChoice>
+          <af:inputComboboxListOfValues id="primaryContact1Id"
+                                        popupTitle="Search and Select: #{bindings.PrimaryContact1.hints.label}"
+                                        value="#{bindings.PrimaryContact1.inputValue}"
+                                        label="#{bindings.PrimaryContact1.hints.label}"
+                                        model="#{bindings.PrimaryContact1.listOfValuesModel}"
+                                        required="#{bindings.PrimaryContact1.hints.mandatory}"
+                                        columns="#{bindings.PrimaryContact1.hints.displayWidth}"
+                                        shortDesc="#{bindings.PrimaryContact1.hints.tooltip}"
+                                        contentStyle="width:240px;">
+            <f:validator binding="#{bindings.PrimaryContact1.validator}"/>
+          </af:inputComboboxListOfValues>
           <af:inputText value="#{bindings.BudgetAmount.inputValue}" label="#{bindings.BudgetAmount.hints.label}"
                         required="#{bindings.BudgetAmount.hints.mandatory}"
                         columns="#{bindings.BudgetAmount.hints.displayWidth}"

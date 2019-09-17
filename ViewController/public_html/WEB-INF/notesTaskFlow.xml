@@ -10,6 +10,11 @@
       <managed-bean-class>view.bean.UploadFiles</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__2">
+      <managed-bean-name>NoteCommit</managed-bean-name>
+      <managed-bean-class>view.common.NoteCommit</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="notesList">
       <page>/notesList.jsff</page>
     </view>

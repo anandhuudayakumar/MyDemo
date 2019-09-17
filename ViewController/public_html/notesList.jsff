@@ -3,13 +3,13 @@
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelBox id="pb1">
     <f:facet name="toolbar">
-      <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create"
-                 disabled="#{!bindings.CreateInsert.enabled}" id="b1">
+      <af:button text="Create"
+                 disabled="#{!bindings.CreateInsert.enabled}" id="b1" actionListener="#{bindings.CreateInsert.execute}">
         <af:showPopupBehavior popupId="p1" triggerType="action"/>
       </af:button>
     </f:facet>
     <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached">
-      <af:dialog id="d1">
+      <af:dialog id="d1" dialogListener="#{backingBeanScope.NoteCommit.doNoteCommit}">
         <f:facet name="buttonBar"/>
       </af:dialog>
       <af:panelBox text="Create Note" id="pb2">

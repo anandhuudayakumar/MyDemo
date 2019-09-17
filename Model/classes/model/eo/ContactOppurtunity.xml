@@ -87,6 +87,13 @@
     AssociationOtherEnd="model.eo.ContinvOpportunitiesFkAssoc.ContactOppurtunity"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Contacts1"
+    Association="model.eo.oppContactMainContact"
+    AssociationEnd="model.eo.oppContactMainContact.Contacts1"
+    AssociationOtherEnd="model.eo.oppContactMainContact.ContactOppurtunity1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ContactInteractionv1Pk"
     PrimaryKey="true">

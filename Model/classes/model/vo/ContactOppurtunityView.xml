@@ -27,11 +27,10 @@
       <Item Value="ContactId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="ContactId"/>
-    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ContactName"/>
     </AttrArray>
     <DisplayCriteria
@@ -127,4 +126,9 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewLinkAccessor
+    Name="ContactsView"
+    ViewLink="model.vo.oppContactMainContact"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

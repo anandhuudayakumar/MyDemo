@@ -15,5 +15,16 @@
         </f:facet>
       </af:panelGroupLayout>
     </f:facet>
+    <af:panelFormLayout id="pfl1">
+      <af:inputComboboxListOfValues id="contactIdId" popupTitle="Search and Select: #{bindings.ContactId.hints.label}"
+                                    value="#{bindings.ContactId.inputValue}" label="#{bindings.ContactId.hints.label}"
+                                    model="#{bindings.ContactId.listOfValuesModel}"
+                                    required="#{bindings.ContactId.hints.mandatory}"
+                                    columns="#{bindings.ContactId.hints.displayWidth}"
+                                    shortDesc="#{bindings.ContactId.hints.tooltip}">
+        <f:validator binding="#{bindings.ContactId.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.ContactId.format}"/>
+      </af:inputComboboxListOfValues>
+    </af:panelFormLayout>
   </af:panelBox>
 </ui:composition>

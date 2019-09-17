@@ -20,14 +20,18 @@
   <ListBinding
     Name="LOV_ContactId"
     ListVOName="ContactsView1"
+    ComboRowCountHint="10"
     NullValueFlag="none"
-    MRUCount="0"
-    ComboRowCountHint="10">
+    MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="ContactId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
+      <Item Value="ContactId"/>
       <Item Value="ContactName"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
@@ -126,4 +130,9 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewLinkAccessor
+    Name="ContactsView"
+    ViewLink="model.vo.oppContactMainContact"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -12,15 +12,18 @@
   BindingStyle="OracleName">
   <Attribute
     Name="Noteid"
-    IsNotNull="true"
     Precision="38"
     Scale="0"
     ColumnName="NOTEID"
     SQLType="NUMERIC"
-    Type="java.math.BigInteger"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="ANANDHU_NOTES"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="Oppid"
     IsNotNull="true"

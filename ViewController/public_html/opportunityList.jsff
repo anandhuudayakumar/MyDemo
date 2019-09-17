@@ -83,7 +83,7 @@
       <af:dialog id="d1" title="Delete Confiramtion" affirmativeTextAndAccessKey="Yes" cancelTextAndAccessKey="No"
                  dialogListener="#{backingBeanScope.DeleteRow.doDelete}">
         <f:facet name="buttonBar"/>
-        <af:outputText value="Are you sure you want to delete " id="ot3"
+        <af:outputText value="Are you sure you want to delete #{bindings.OppName.inputValue}" id="ot3"
                        inlineStyle="color:#ffa464; font-weight:bolder; font-size:large; text-align:center;"/>
         <af:outputText value="#{bindings.OppName.inputValue}??" shortDesc="#{bindings.OppName.hints.tooltip}" id="ot9"
                        inlineStyle="color:#ffa464; font-size:large; font-weight:bolder;"/>
