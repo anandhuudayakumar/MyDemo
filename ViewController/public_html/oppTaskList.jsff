@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox id="pb1">
+    <f:facet name="toolbar">
+      <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create"
+                 disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="create"/>
+    </f:facet>
+    <af:panelGroupLayout layout="vertical" id="pgl1">
+      <af:panelHeader text="Tasks" id="ph1">
+        <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.NameQuery.queryDescriptor}"
+                  model="#{bindings.NameQuery.queryModel}" queryListener="#{bindings.NameQuery.processQuery}"
+                  queryOperationListener="#{bindings.NameQuery.processQueryOperation}" resultComponentId="::resId1"/>
+      </af:panelHeader>
+      <af:table value="#{bindings.TasksView2.collectionModel}" var="row" rows="#{bindings.TasksView2.rangeSize}"
+                emptyText="#{bindings.TasksView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" selectedRowKeys="#{bindings.TasksView2.collectionModel.selectedRow}"
+                selectionListener="#{bindings.TasksView2.collectionModel.makeCurrent}" rowSelection="single"
+                fetchSize="#{bindings.TasksView2.rangeSize}" filterModel="#{bindings.NameQuery.queryDescriptor}"
+                filterVisible="true" queryListener="#{bindings.NameQuery.processQuery}" varStatus="vs" id="resId1"
+                partialTriggers="::b1" columnStretching="last">
+        <af:column sortProperty="#{bindings.TasksView2.hints.TaskName.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.TasksView2.hints.TaskName.label}" id="resId1c1">
+          <af:link shortDesc="#{bindings.TasksView2.hints.TaskName.tooltip}" id="ot1" text="#{row.TaskName}"
+                   action="edit"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.TasksView2.hints.DueDate.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.TasksView2.hints.DueDate.label}" id="resId1c2">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.NameQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.DueDate.value}"
+                          id="id1">
+              <af:convertDateTime pattern="#{bindings.TasksView2.hints.DueDate.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:outputText value="#{row.DueDate}" shortDesc="#{bindings.TasksView2.hints.DueDate.tooltip}" id="ot2">
+            <af:convertDateTime pattern="#{bindings.TasksView2.hints.DueDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.TasksView2.hints.Priority.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.TasksView2.hints.Priority.label}" id="resId1c3">
+          <af:outputText value="#{row.Priority}" shortDesc="#{bindings.TasksView2.hints.Priority.tooltip}" id="ot3"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.TasksView2.hints.Description.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.TasksView2.hints.Description.label}" id="resId1c4">
+          <af:outputText value="#{row.Description}" shortDesc="#{bindings.TasksView2.hints.Description.tooltip}"
+                         id="ot4"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.TasksView2.hints.PercentageCompletion.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.TasksView2.hints.PercentageCompletion.label}" id="resId1c5">
+          <af:outputText value="#{row.PercentageCompletion}"
+                         shortDesc="#{bindings.TasksView2.hints.PercentageCompletion.tooltip}" id="ot5">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.TasksView2.hints.PercentageCompletion.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.TasksView2.hints.AccountNameTrans.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.TasksView2.hints.AccountNameTrans.label}" id="resId1c6">
+          <af:outputText value="#{row.AccountNameTrans}"
+                         shortDesc="#{bindings.TasksView2.hints.AccountNameTrans.tooltip}" id="ot6"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.TasksView2.hints.ContactNameTrans.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.TasksView2.hints.ContactNameTrans.label}" id="resId1c7">
+          <af:outputText value="#{row.ContactNameTrans}"
+                         shortDesc="#{bindings.TasksView2.hints.ContactNameTrans.tooltip}" id="ot7"/>
+        </af:column>
+      </af:table>
+    </af:panelGroupLayout>
+  </af:panelBox>
+</ui:composition>

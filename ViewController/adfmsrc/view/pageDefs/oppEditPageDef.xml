@@ -12,6 +12,8 @@
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <taskFlow id="oppProductTaskFlow1" taskFlowId="/WEB-INF/oppProductTaskFlow.xml#oppProductTaskFlow"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="opportunityTask1" taskFlowId="/WEB-INF/opportunityTask.xml#opportunityTask" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="OpportunitiesView1Iterator" id="OppName">

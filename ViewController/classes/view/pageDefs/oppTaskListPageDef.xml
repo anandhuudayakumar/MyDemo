@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="oppTaskListPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TasksView2" RangeSize="25" DataControl="AppModuleDataControl" id="TasksView2Iterator"/>
+    <searchRegion Criteria="Name" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="TasksView2Iterator" id="NameQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TasksView2Iterator" id="TasksView2">
+      <nodeDefinition DefName="model.vo.TasksView" Name="TasksView20">
+        <AttrNames>
+          <Item Value="TaskName"/>
+          <Item Value="DueDate"/>
+          <Item Value="Priority"/>
+          <Item Value="Description"/>
+          <Item Value="PercentageCompletion"/>
+          <Item Value="AccountNameTrans"/>
+          <Item Value="ContactNameTrans"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TasksView2Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

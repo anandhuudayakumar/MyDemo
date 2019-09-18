@@ -112,7 +112,7 @@
             <f:validator binding="#{bindings.CloseDate.validator}"/>
             <af:convertDateTime pattern="#{bindings.CloseDate.format}"/>
           </af:inputDate>
-          <af:inputText label="Label 1" id="it6"/>
+          
         </af:panelFormLayout>
         <f:facet name="toolbar"/>
       </af:showDetailItem>
@@ -120,7 +120,9 @@
         <af:region value="#{bindings.OppContactList1.regionModel}" id="r2"/>
       </af:showDetailItem>
       <af:showDetailItem id="tab3" text="Appointment" icon="/appointmentIcon.png"/>
-      <af:showDetailItem id="tab4" text="Task" icon="/tasksIcon.png"/>
+      <af:showDetailItem id="tab4" text="Task" icon="/tasksIcon.png">
+        <af:region value="#{bindings.opportunityTask1.regionModel}" id="r4"/>
+      </af:showDetailItem>
       <af:showDetailItem id="tab5" text="Product" icon="/ItemsIcon.png">
         <af:region value="#{bindings.oppProductTaskFlow1.regionModel}" id="r3"/>
       </af:showDetailItem>

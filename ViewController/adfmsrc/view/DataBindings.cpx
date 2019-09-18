@@ -17,6 +17,9 @@
     <page path="/productList.jsff" usageId="view_productListPageDef"/>
     <page path="/productEdit.jsff" usageId="view_productEditPageDef"/>
     <page path="/productCreate.jsff" usageId="view_productCreatePageDef"/>
+    <page path="/oppTaskList.jsff" usageId="view_oppTaskListPageDef"/>
+    <page path="/oppTaskCreate.jsff" usageId="view_oppTaskCreatePageDef"/>
+    <page path="/oppTaskEdit.jsff" usageId="view_oppTaskEditPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_opportunityListPageDef" path="view.pageDefs.opportunityListPageDef"/>
@@ -29,6 +32,9 @@
     <page id="view_productListPageDef" path="view.pageDefs.productListPageDef"/>
     <page id="view_productEditPageDef" path="view.pageDefs.productEditPageDef"/>
     <page id="view_productCreatePageDef" path="view.pageDefs.productCreatePageDef"/>
+    <page id="view_oppTaskListPageDef" path="view.pageDefs.oppTaskListPageDef"/>
+    <page id="view_oppTaskCreatePageDef" path="view.pageDefs.oppTaskCreatePageDef"/>
+    <page id="view_oppTaskEditPageDef" path="view.pageDefs.oppTaskEditPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.eo"

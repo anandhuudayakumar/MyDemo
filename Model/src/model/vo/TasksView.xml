@@ -13,6 +13,63 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="bindTaskName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <ViewAccessor
+    Name="ContactsView1"
+    ViewObjectName="model.vo.ContactsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CustomerAccountView1"
+    ViewObjectName="model.vo.CustomerAccountView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AccountNameTrans"
+    ListVOName="CustomerAccountView1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="AccountNameTrans"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="AccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AccountName"/>
+      <Item Value="AccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AccountName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ContactNameTrans"
+    ListVOName="ContactsView1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContactNameTrans"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ContactName"/>
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ContactName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="name"/>
+  </ListBinding>
   <EntityUsage
     Name="Tasks"
     Entity="model.eo.Tasks"/>
@@ -22,19 +79,34 @@
     PrecisionRule="true"
     EntityAttrName="TaskId"
     EntityUsage="Tasks"
-    AliasName="TASK_ID"/>
+    AliasName="TASK_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="TaskName"
     PrecisionRule="true"
     EntityAttrName="TaskName"
     EntityUsage="Tasks"
-    AliasName="TASK_NAME"/>
+    AliasName="TASK_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.TasksView.TaskName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DueDate"
     PrecisionRule="true"
     EntityAttrName="DueDate"
     EntityUsage="Tasks"
-    AliasName="DUE_DATE"/>
+    AliasName="DUE_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.TasksView.DueDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Priority"
     PrecisionRule="true"
@@ -58,43 +130,92 @@
     PrecisionRule="true"
     EntityAttrName="PercentageCompletion"
     EntityUsage="Tasks"
-    AliasName="PERCENTAGE_COMPLETION"/>
+    AliasName="PERCENTAGE_COMPLETION">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.TasksView.PercentageCompletion_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="Tasks"
-    AliasName="CREATED_BY"/>
+    AliasName="CREATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="Tasks"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ModifiedDate"
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="Tasks"
-    AliasName="MODIFIED_DATE"/>
+    AliasName="MODIFIED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ObjectVersion"
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="Tasks"
-    AliasName="OBJECT_VERSION"/>
+    AliasName="OBJECT_VERSION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastModifiedBy"
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="Tasks"
-    AliasName="LAST_MODIFIED_BY"/>
+    AliasName="LAST_MODIFIED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AccountId"
     PrecisionRule="true"
     EntityAttrName="AccountId"
     EntityUsage="Tasks"
-    AliasName="ACCOUNT_ID"/>
+    AliasName="ACCOUNT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="OppurtunityId"
     PrecisionRule="true"
@@ -107,6 +228,82 @@
     EntityAttrName="ContactId"
     EntityUsage="Tasks"
     AliasName="CONTACT_ID"/>
+  <ViewAttribute
+    Name="AccountNameTrans"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_AccountNameTrans">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.TasksView.AccountNameTrans_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ContactNameTrans"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_ContactNameTrans">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.vo.TasksView.ContactNameTrans_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="Name"
+    ViewObjectName="model.vo.TasksView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="TasksViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="TaskName"
+        ViewAttribute="TaskName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":bindTaskName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ContactTaskInviteesView"
     ViewLink="model.vo.TaskinvAccTasksFkLink"
@@ -117,4 +314,8 @@
     ViewLink="model.vo.TaskInterestedAccTasksFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

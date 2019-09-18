@@ -169,6 +169,9 @@
   <ViewUsage
     Name="AnandhuLookupView2"
     ViewObjectName="model.vo.AnandhuLookupView"/>
+  <ViewUsage
+    Name="TasksView2"
+    ViewObjectName="model.vo.TasksView"/>
   <ViewLinkUsage
     Name="ContinvcontactsFkv2Link1"
     ViewLinkObjectName="model.vo.ContinvcontactsFkv2Link"
@@ -324,5 +327,11 @@
     ViewLinkObjectName="model.vo.UserinvUserAccountsFkLink"
     SrcViewUsageName="model.eo.AppModule.UserAccountsView1"
     DstViewUsageName="model.eo.AppModule.UserTaskInterestedView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="opportunityTaskViewLink1"
+    ViewLinkObjectName="model.vo.opportunityTaskViewLink"
+    SrcViewUsageName="model.eo.AppModule.OpportunitiesView1"
+    DstViewUsageName="model.eo.AppModule.TasksView2"
     Reversed="false"/>
 </AppModule>

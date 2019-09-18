@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox id="pb1" text="Create Task">
+    <f:facet name="toolbar">
+      <af:panelGroupLayout id="pgl1">
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
+                   id="b1" action="backCreate"/>
+        <af:button actionListener="#{bindings.Rollback.execute}" text="Back" disabled="#{!bindings.Rollback.enabled}"
+                   immediate="true" id="b2" action="backCreate">
+          <af:resetActionListener/>
+        </af:button>
+      </af:panelGroupLayout>
+    </f:facet>
+    <af:panelFormLayout id="pfl1">
+      <af:inputText value="#{bindings.TaskName.inputValue}" label="#{bindings.TaskName.hints.label}"
+                    required="#{bindings.TaskName.hints.mandatory}" columns="#{bindings.TaskName.hints.displayWidth}"
+                    maximumLength="#{bindings.TaskName.hints.precision}" shortDesc="#{bindings.TaskName.hints.tooltip}"
+                    id="it1" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.TaskName.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.Description.inputValue}" label="#{bindings.Description.hints.label}"
+                    required="#{bindings.Description.hints.mandatory}"
+                    columns="#{bindings.Description.hints.displayWidth}"
+                    maximumLength="#{bindings.Description.hints.precision}"
+                    shortDesc="#{bindings.Description.hints.tooltip}" id="it2" contentStyle="width:240px;" rows="4">
+        <f:validator binding="#{bindings.Description.validator}"/>
+      </af:inputText>
+      <af:inputComboboxListOfValues id="accountNameTrans1Id"
+                                    popupTitle="Search and Select: #{bindings.AccountNameTrans1.hints.label}"
+                                    value="#{bindings.AccountNameTrans1.inputValue}"
+                                    label="#{bindings.AccountNameTrans1.hints.label}"
+                                    model="#{bindings.AccountNameTrans1.listOfValuesModel}"
+                                    required="#{bindings.AccountNameTrans1.hints.mandatory}"
+                                    columns="#{bindings.AccountNameTrans1.hints.displayWidth}"
+                                    shortDesc="#{bindings.AccountNameTrans1.hints.tooltip}" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.AccountNameTrans1.validator}"/>
+      </af:inputComboboxListOfValues>
+      <af:inputComboboxListOfValues id="contactNameTrans1Id"
+                                    popupTitle="Search and Select: #{bindings.ContactNameTrans1.hints.label}"
+                                    value="#{bindings.ContactNameTrans1.inputValue}"
+                                    label="#{bindings.ContactNameTrans1.hints.label}"
+                                    model="#{bindings.ContactNameTrans1.listOfValuesModel}"
+                                    required="#{bindings.ContactNameTrans1.hints.mandatory}"
+                                    columns="#{bindings.ContactNameTrans1.hints.displayWidth}"
+                                    shortDesc="#{bindings.ContactNameTrans1.hints.tooltip}" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.ContactNameTrans1.validator}"/>
+      </af:inputComboboxListOfValues>
+      <af:inputText value="#{bindings.Priority.inputValue}" label="#{bindings.Priority.hints.label}"
+                    required="#{bindings.Priority.hints.mandatory}" columns="#{bindings.Priority.hints.displayWidth}"
+                    maximumLength="#{bindings.Priority.hints.precision}" shortDesc="#{bindings.Priority.hints.tooltip}"
+                    id="it3" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.Priority.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.PercentageCompletion.inputValue}"
+                    label="#{bindings.PercentageCompletion.hints.label}"
+                    required="#{bindings.PercentageCompletion.hints.mandatory}"
+                    columns="#{bindings.PercentageCompletion.hints.displayWidth}"
+                    maximumLength="#{bindings.PercentageCompletion.hints.precision}"
+                    shortDesc="#{bindings.PercentageCompletion.hints.tooltip}" id="it4" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.PercentageCompletion.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.PercentageCompletion.format}"/>
+      </af:inputText>
+      <af:inputDate value="#{bindings.DueDate.inputValue}" label="#{bindings.DueDate.hints.label}"
+                    required="#{bindings.DueDate.hints.mandatory}" columns="#{bindings.DueDate.hints.displayWidth}"
+                    shortDesc="#{bindings.DueDate.hints.tooltip}" id="id1" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.DueDate.validator}"/>
+        <af:convertDateTime pattern="#{bindings.DueDate.format}"/>
+      </af:inputDate>
+    </af:panelFormLayout>
+  </af:panelBox>
+</ui:composition>

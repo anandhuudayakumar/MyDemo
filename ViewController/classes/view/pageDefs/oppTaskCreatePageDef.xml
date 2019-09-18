@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="oppTaskCreatePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TasksView2" RangeSize="25" DataControl="AppModuleDataControl" id="TasksView2Iterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <listOfValues IterBinding="TasksView2Iterator" StaticList="false" Uses="LOV_AccountNameTrans"
+                  id="AccountNameTrans1"/>
+    <listOfValues IterBinding="TasksView2Iterator" StaticList="false" Uses="LOV_ContactNameTrans"
+                  id="ContactNameTrans1"/>
+    <attributeValues IterBinding="TasksView2Iterator" id="TaskName">
+      <AttrNames>
+        <Item Value="TaskName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TasksView2Iterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TasksView2Iterator" id="Priority">
+      <AttrNames>
+        <Item Value="Priority"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TasksView2Iterator" id="PercentageCompletion">
+      <AttrNames>
+        <Item Value="PercentageCompletion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TasksView2Iterator" id="DueDate">
+      <AttrNames>
+        <Item Value="DueDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

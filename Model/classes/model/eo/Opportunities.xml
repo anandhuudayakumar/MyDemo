@@ -271,6 +271,13 @@
     AssociationOtherEnd="model.eo.UserintOpportunitiesFkAssoc.Opportunities"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Tasks"
+    Association="model.eo.OpportunityTaskAssociation"
+    AssociationEnd="model.eo.OpportunityTaskAssociation.Tasks"
+    AssociationOtherEnd="model.eo.OpportunityTaskAssociation.Opportunities"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="OpportunitiesAccountidCheck">
     <DesignTime>

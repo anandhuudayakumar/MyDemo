@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="opportunityTask">
+    <default-activity>oppTaskList</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="oppTaskList">
+      <page>/oppTaskList.jsff</page>
+    </view>
+    <view id="oppTaskEdit">
+      <page>/oppTaskEdit.jsff</page>
+    </view>
+    <view id="oppTaskCreate">
+      <page>/oppTaskCreate.jsff</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>oppTaskList</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>oppTaskEdit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>create</from-outcome>
+        <to-activity-id>oppTaskCreate</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>oppTaskEdit</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>backEdit</from-outcome>
+        <to-activity-id>oppTaskList</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>oppTaskCreate</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>backCreate</from-outcome>
+        <to-activity-id>oppTaskList</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
