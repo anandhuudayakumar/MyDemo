@@ -15,6 +15,11 @@
       <managed-bean-class>view.common.NoteCommit</managed-bean-class>
       <managed-bean-scope>backingBean</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__3">
+      <managed-bean-name>DeleteNotes</managed-bean-name>
+      <managed-bean-class>view.common.DeleteNotes</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="notesList">
       <page>/notesList.jsff</page>
     </view>

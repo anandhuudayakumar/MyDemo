@@ -25,6 +25,14 @@
     Name="CustomerAccountView1"
     ViewObjectName="model.vo.CustomerAccountView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AnandhuLookupView1"
+    ViewObjectName="model.vo.AnandhuLookupView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="RISK_LEVEL"
+      FullName="model.vo.AnandhuLookupView.RISK_LEVEL"/>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_AccountNameTrans"
     ListVOName="CustomerAccountView1"
@@ -45,7 +53,8 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="AccountName"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Name="Account"/>
   </ListBinding>
   <ListBinding
     Name="LOV_ContactNameTrans"
@@ -69,6 +78,24 @@
     </AttrArray>
     <DisplayCriteria
       Name="name"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Priority"
+    ListVOName="AnandhuLookupView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Priority"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Data"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Data"/>
+    </AttrArray>
+    <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="Tasks"
@@ -112,7 +139,15 @@
     PrecisionRule="true"
     EntityAttrName="Priority"
     EntityUsage="Tasks"
-    AliasName="PRIORITY"/>
+    AliasName="PRIORITY"
+    LOVName="LOV_Priority">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Description"
     PrecisionRule="true"

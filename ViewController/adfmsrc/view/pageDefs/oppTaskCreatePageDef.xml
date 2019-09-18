@@ -10,9 +10,9 @@
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <listOfValues IterBinding="TasksView2Iterator" StaticList="false" Uses="LOV_AccountNameTrans"
-                  id="AccountNameTrans1"/>
+                  id="AccountNameTrans"/>
     <listOfValues IterBinding="TasksView2Iterator" StaticList="false" Uses="LOV_ContactNameTrans"
-                  id="ContactNameTrans1"/>
+                  id="ContactNameTrans"/>
     <attributeValues IterBinding="TasksView2Iterator" id="TaskName">
       <AttrNames>
         <Item Value="TaskName"/>
@@ -23,11 +23,8 @@
         <Item Value="Description"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TasksView2Iterator" id="Priority">
-      <AttrNames>
-        <Item Value="Priority"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="TasksView2Iterator" StaticList="false" Uses="LOV_Priority" id="Priority" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TasksView2Iterator" id="PercentageCompletion">
       <AttrNames>
         <Item Value="PercentageCompletion"/>

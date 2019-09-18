@@ -3,10 +3,16 @@
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelBox id="pb1">
     <f:facet name="toolbar">
-      <af:button text="Create"
-                 disabled="#{!bindings.CreateInsert.enabled}" id="b1" actionListener="#{bindings.CreateInsert.execute}">
-        <af:showPopupBehavior popupId="p1" triggerType="action"/>
-      </af:button>
+      <af:panelGroupLayout id="pgl2">
+        <af:button text="Create" disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                   actionListener="#{bindings.CreateInsert.execute}">
+          <af:showPopupBehavior popupId="p1" triggerType="action"/>
+        </af:button>
+        <af:button actionListener="#{bindings.Delete.execute}" text="Delete" disabled="#{!bindings.Delete.enabled}"
+                   id="b2">
+          <af:showPopupBehavior popupId="p3"/>
+        </af:button>
+      </af:panelGroupLayout>
     </f:facet>
     <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached"
               popupFetchListener="#{backingBeanScope.NoteCommit.noteCreateFetchListner}">
@@ -58,7 +64,7 @@
                 selectionListener="#{bindings.AnandhuNotesView2.collectionModel.makeCurrent}" rowSelection="single"
                 fetchSize="#{bindings.AnandhuNotesView2.rangeSize}" filterModel="#{bindings.nameQuery.queryDescriptor}"
                 filterVisible="true" queryListener="#{bindings.nameQuery.processQuery}" varStatus="vs" id="resId1"
-                partialTriggers="::b1" columnStretching="last">
+                partialTriggers="::b1 ::b2" columnStretching="last">
         <af:column sortProperty="#{bindings.AnandhuNotesView2.hints.Notename.name}" filterable="true" sortable="true"
                    headerText="#{bindings.AnandhuNotesView2.hints.Notename.label}" id="resId1c1">
           <af:link shortDesc="#{bindings.AnandhuNotesView2.hints.Notename.tooltip}" id="ot1" text="#{row.Notename}">
@@ -117,6 +123,13 @@
             <af:convertDateTime pattern="#{bindings.Time1.format}"/>
           </af:inputDate>
         </af:panelFormLayout>
+      </af:dialog>
+    </af:popup>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p3">
+      <af:dialog id="d3" title="Delete Confirmation"
+                 dialogListener="#{backingBeanScope.DeleteNotes.deleteNotesFromList}">
+        <f:facet name="buttonBar"/>
+        <af:outputText value="Are you sure you want to delete  #{bindings.Notename.inputValue} ?" id="ot5"/>
       </af:dialog>
     </af:popup>
   </af:panelBox>

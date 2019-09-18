@@ -4,10 +4,10 @@
   <af:panelBox text="Edit Task" id="pb1">
     <f:facet name="toolbar">
       <af:panelGroupLayout id="pgl1">
-        <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" 
                    id="b1" action="backEdit"/>
         <af:button actionListener="#{bindings.Rollback.execute}" text="Back"
-                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b2" action="backEdit">
+                    immediate="true" id="b2" action="backEdit">
           <af:resetActionListener/>
         </af:button>
       </af:panelGroupLayout>
@@ -26,16 +26,6 @@
                     shortDesc="#{bindings.Description.hints.tooltip}" id="it2" contentStyle="width:240px;">
         <f:validator binding="#{bindings.Description.validator}"/>
       </af:inputText>
-      <af:inputComboboxListOfValues id="contactNameTransId"
-                                    popupTitle="Search and Select: #{bindings.ContactNameTrans.hints.label}"
-                                    value="#{bindings.ContactNameTrans.inputValue}"
-                                    label="#{bindings.ContactNameTrans.hints.label}"
-                                    model="#{bindings.ContactNameTrans.listOfValuesModel}"
-                                    required="#{bindings.ContactNameTrans.hints.mandatory}"
-                                    columns="#{bindings.ContactNameTrans.hints.displayWidth}"
-                                    shortDesc="#{bindings.ContactNameTrans.hints.tooltip}" contentStyle="width:240px;">
-        <f:validator binding="#{bindings.ContactNameTrans.validator}"/>
-      </af:inputComboboxListOfValues>
       <af:inputComboboxListOfValues id="accountNameTransId"
                                     popupTitle="Search and Select: #{bindings.AccountNameTrans.hints.label}"
                                     value="#{bindings.AccountNameTrans.inputValue}"
@@ -46,18 +36,28 @@
                                     shortDesc="#{bindings.AccountNameTrans.hints.tooltip}" contentStyle="width:240px;">
         <f:validator binding="#{bindings.AccountNameTrans.validator}"/>
       </af:inputComboboxListOfValues>
-      <af:inputText value="#{bindings.Priority.inputValue}" label="#{bindings.Priority.hints.label}"
-                    required="#{bindings.Priority.hints.mandatory}" columns="#{bindings.Priority.hints.displayWidth}"
-                    maximumLength="#{bindings.Priority.hints.precision}" shortDesc="#{bindings.Priority.hints.tooltip}"
-                    id="it3" contentStyle="width:240px;">
-        <f:validator binding="#{bindings.Priority.validator}"/>
-      </af:inputText>
+      <af:inputComboboxListOfValues id="contactNameTransId"
+                                    popupTitle="Search and Select: #{bindings.ContactNameTrans.hints.label}"
+                                    value="#{bindings.ContactNameTrans.inputValue}"
+                                    label="#{bindings.ContactNameTrans.hints.label}"
+                                    model="#{bindings.ContactNameTrans.listOfValuesModel}"
+                                    required="#{bindings.ContactNameTrans.hints.mandatory}"
+                                    columns="#{bindings.ContactNameTrans.hints.displayWidth}"
+                                    shortDesc="#{bindings.ContactNameTrans.hints.tooltip}" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.ContactNameTrans.validator}"/>
+      </af:inputComboboxListOfValues>
+      <af:selectOneChoice value="#{bindings.Priority1.inputValue}" label="#{bindings.Priority1.label}"
+                          required="#{bindings.Priority1.hints.mandatory}"
+                          shortDesc="#{bindings.Priority1.hints.tooltip}" id="soc1" contentStyle="width:240px;">
+        <f:selectItems value="#{bindings.Priority1.items}" id="si1"/>
+        <f:validator binding="#{bindings.Priority1.validator}"/>
+      </af:selectOneChoice>
       <af:inputText value="#{bindings.PercentageCompletion.inputValue}"
                     label="#{bindings.PercentageCompletion.hints.label}"
                     required="#{bindings.PercentageCompletion.hints.mandatory}"
                     columns="#{bindings.PercentageCompletion.hints.displayWidth}"
                     maximumLength="#{bindings.PercentageCompletion.hints.precision}"
-                    shortDesc="#{bindings.PercentageCompletion.hints.tooltip}" id="it4" contentStyle="width:240px;">
+                    shortDesc="#{bindings.PercentageCompletion.hints.tooltip}" id="it3" contentStyle="width:240px;">
         <f:validator binding="#{bindings.PercentageCompletion.validator}"/>
         <af:convertNumber groupingUsed="false" pattern="#{bindings.PercentageCompletion.format}"/>
       </af:inputText>

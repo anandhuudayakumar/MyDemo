@@ -26,7 +26,14 @@
     PrecisionRule="true"
     EntityAttrName="ContactId"
     EntityUsage="Contacts"
-    AliasName="CONTACT_ID"/>
+    AliasName="CONTACT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ContactName"
     PrecisionRule="true"
@@ -47,37 +54,79 @@
     PrecisionRule="true"
     EntityAttrName="Title"
     EntityUsage="Contacts"
-    AliasName="TITLE"/>
+    AliasName="TITLE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AccountId"
     PrecisionRule="true"
     EntityAttrName="AccountId"
     EntityUsage="Contacts"
-    AliasName="ACCOUNT_ID"/>
+    AliasName="ACCOUNT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Department"
     PrecisionRule="true"
     EntityAttrName="Department"
     EntityUsage="Contacts"
-    AliasName="DEPARTMENT"/>
+    AliasName="DEPARTMENT">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Address1"
     PrecisionRule="true"
     EntityAttrName="Address1"
     EntityUsage="Contacts"
-    AliasName="ADDRESS1"/>
+    AliasName="ADDRESS1">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Address2"
     PrecisionRule="true"
     EntityAttrName="Address2"
     EntityUsage="Contacts"
-    AliasName="ADDRESS2"/>
+    AliasName="ADDRESS2">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Address3"
     PrecisionRule="true"
     EntityAttrName="Address3"
     EntityUsage="Contacts"
-    AliasName="ADDRESS3"/>
+    AliasName="ADDRESS3">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="WorkPhone"
     PrecisionRule="true"
@@ -88,6 +137,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.vo.ContactsView.WorkPhone_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -101,6 +152,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.vo.ContactsView.MobilePhone_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -109,13 +162,27 @@
     PrecisionRule="true"
     EntityAttrName="Email"
     EntityUsage="Contacts"
-    AliasName="EMAIL"/>
+    AliasName="EMAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="InfluenceLevel"
     PrecisionRule="true"
     EntityAttrName="InfluenceLevel"
     EntityUsage="Contacts"
-    AliasName="INFLUENCE_LEVEL"/>
+    AliasName="INFLUENCE_LEVEL">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SslesrepId"
     PrecisionRule="true"
@@ -126,6 +193,8 @@
       <SchemaBasedProperties>
         <DISPLAYHINT
           Value="Hide"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -134,7 +203,14 @@
     PrecisionRule="true"
     EntityAttrName="OppurtunityId"
     EntityUsage="Contacts"
-    AliasName="OPPURTUNITY_ID"/>
+    AliasName="OPPURTUNITY_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -145,6 +221,8 @@
       <SchemaBasedProperties>
         <DISPLAYHINT
           Value="Hide"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -158,6 +236,8 @@
       <SchemaBasedProperties>
         <DISPLAYHINT
           Value="Hide"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -171,6 +251,8 @@
       <SchemaBasedProperties>
         <DISPLAYHINT
           Value="Hide"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -184,6 +266,8 @@
       <SchemaBasedProperties>
         <DISPLAYHINT
           Value="Hide"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -197,6 +281,8 @@
       <SchemaBasedProperties>
         <DISPLAYHINT
           Value="Hide"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

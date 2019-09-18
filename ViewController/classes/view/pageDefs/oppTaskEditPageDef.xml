@@ -7,10 +7,17 @@
     <iterator Binds="TasksView2" RangeSize="25" DataControl="AppModuleDataControl" id="TasksView2Iterator"/>
   </executables>
   <bindings>
-    <listOfValues IterBinding="TasksView2Iterator" StaticList="false" Uses="LOV_ContactNameTrans"
-                  id="ContactNameTrans"/>
+    <attributeValues IterBinding="TasksView2Iterator" id="Priority">
+      <AttrNames>
+        <Item Value="Priority"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <listOfValues IterBinding="TasksView2Iterator" StaticList="false" Uses="LOV_AccountNameTrans"
                   id="AccountNameTrans"/>
+    <listOfValues IterBinding="TasksView2Iterator" StaticList="false" Uses="LOV_ContactNameTrans"
+                  id="ContactNameTrans"/>
     <attributeValues IterBinding="TasksView2Iterator" id="TaskName">
       <AttrNames>
         <Item Value="TaskName"/>
@@ -21,11 +28,8 @@
         <Item Value="Description"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TasksView2Iterator" id="Priority">
-      <AttrNames>
-        <Item Value="Priority"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="TasksView2Iterator" StaticList="false" Uses="LOV_Priority" id="Priority1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TasksView2Iterator" id="PercentageCompletion">
       <AttrNames>
         <Item Value="PercentageCompletion"/>
@@ -36,7 +40,5 @@
         <Item Value="DueDate"/>
       </AttrNames>
     </attributeValues>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
   </bindings>
 </pageDefinition>

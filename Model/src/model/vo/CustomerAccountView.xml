@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="bindAccountName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="CustomerAccount"
     Entity="model.eo.CustomerAccount"/>
@@ -28,91 +32,232 @@
     PrecisionRule="true"
     EntityAttrName="AccountName"
     EntityUsage="CustomerAccount"
-    AliasName="ACCOUNT_NAME"/>
+    AliasName="ACCOUNT_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AddressLine1"
     PrecisionRule="true"
     EntityAttrName="AddressLine1"
     EntityUsage="CustomerAccount"
-    AliasName='"Address line 1"'/>
+    AliasName='"Address line 1"'>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AddressLine2"
     PrecisionRule="true"
     EntityAttrName="AddressLine2"
     EntityUsage="CustomerAccount"
-    AliasName='"Address line 2"'/>
+    AliasName='"Address line 2"'>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AddressLine3"
     PrecisionRule="true"
     EntityAttrName="AddressLine3"
     EntityUsage="CustomerAccount"
-    AliasName='"Address line 3"'/>
+    AliasName='"Address line 3"'>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AccountUrl"
     PrecisionRule="true"
     EntityAttrName="AccountUrl"
     EntityUsage="CustomerAccount"
-    AliasName="ACCOUNT_URL"/>
+    AliasName="ACCOUNT_URL">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ParentAccount"
     PrecisionRule="true"
     EntityAttrName="ParentAccount"
     EntityUsage="CustomerAccount"
-    AliasName="PARENT_ACCOUNT"/>
+    AliasName="PARENT_ACCOUNT">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Ceo"
     PrecisionRule="true"
     EntityAttrName="Ceo"
     EntityUsage="CustomerAccount"
-    AliasName="CEO"/>
+    AliasName="CEO">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="NoOfEmployees"
     PrecisionRule="true"
     EntityAttrName="NoOfEmployees"
     EntityUsage="CustomerAccount"
-    AliasName="NO_OF_EMPLOYEES"/>
+    AliasName="NO_OF_EMPLOYEES">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Email"
     PrecisionRule="true"
     EntityAttrName="Email"
     EntityUsage="CustomerAccount"
-    AliasName="EMAIL"/>
+    AliasName="EMAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PrimaryContact"
     PrecisionRule="true"
     EntityAttrName="PrimaryContact"
     EntityUsage="CustomerAccount"
-    AliasName="PRIMARY_CONTACT"/>
+    AliasName="PRIMARY_CONTACT">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="CustomerAccount"
-    AliasName="CREATED_BY"/>
+    AliasName="CREATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="CustomerAccount"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ModifiedDate"
     PrecisionRule="true"
     EntityAttrName="ModifiedDate"
     EntityUsage="CustomerAccount"
-    AliasName="MODIFIED_DATE"/>
+    AliasName="MODIFIED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ObjectVersion"
     PrecisionRule="true"
     EntityAttrName="ObjectVersion"
     EntityUsage="CustomerAccount"
-    AliasName="OBJECT_VERSION"/>
+    AliasName="OBJECT_VERSION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastModifiedBy"
     PrecisionRule="true"
     EntityAttrName="LastModifiedBy"
     EntityUsage="CustomerAccount"
-    AliasName="LAST_MODIFIED_BY"/>
+    AliasName="LAST_MODIFIED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="Account"
+    ViewObjectName="model.vo.CustomerAccountView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="CustomerAccountViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="AccountName"
+        ViewAttribute="AccountName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":bindAccountName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ContactsView"
     ViewLink="model.vo.ContactsCustomerAccountFkLink"

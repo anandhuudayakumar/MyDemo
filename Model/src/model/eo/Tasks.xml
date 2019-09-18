@@ -53,14 +53,6 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="6"/>
     </DesignTime>
-    <validation:RangeValidationBean
-      Name="PriorityRule0"
-      ResId="model.eo.Tasks.Priority_Rule_0"
-      OnAttribute="Priority"
-      OperandType="LITERAL"
-      Inverse="false"
-      MinValue="0"
-      MaxValue="5"/>
   </Attribute>
   <Attribute
     Name="Description"

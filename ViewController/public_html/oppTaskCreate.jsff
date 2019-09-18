@@ -23,41 +23,41 @@
                     required="#{bindings.Description.hints.mandatory}"
                     columns="#{bindings.Description.hints.displayWidth}"
                     maximumLength="#{bindings.Description.hints.precision}"
-                    shortDesc="#{bindings.Description.hints.tooltip}" id="it2" contentStyle="width:240px;" rows="4">
+                    shortDesc="#{bindings.Description.hints.tooltip}" id="it2" contentStyle="width:240px;">
         <f:validator binding="#{bindings.Description.validator}"/>
       </af:inputText>
-      <af:inputComboboxListOfValues id="accountNameTrans1Id"
-                                    popupTitle="Search and Select: #{bindings.AccountNameTrans1.hints.label}"
-                                    value="#{bindings.AccountNameTrans1.inputValue}"
-                                    label="#{bindings.AccountNameTrans1.hints.label}"
-                                    model="#{bindings.AccountNameTrans1.listOfValuesModel}"
-                                    required="#{bindings.AccountNameTrans1.hints.mandatory}"
-                                    columns="#{bindings.AccountNameTrans1.hints.displayWidth}"
-                                    shortDesc="#{bindings.AccountNameTrans1.hints.tooltip}" contentStyle="width:240px;">
-        <f:validator binding="#{bindings.AccountNameTrans1.validator}"/>
+      <af:inputComboboxListOfValues id="accountNameTransId"
+                                    popupTitle="Search and Select: #{bindings.AccountNameTrans.hints.label}"
+                                    value="#{bindings.AccountNameTrans.inputValue}"
+                                    label="#{bindings.AccountNameTrans.hints.label}"
+                                    model="#{bindings.AccountNameTrans.listOfValuesModel}"
+                                    required="#{bindings.AccountNameTrans.hints.mandatory}"
+                                    columns="#{bindings.AccountNameTrans.hints.displayWidth}"
+                                    shortDesc="#{bindings.AccountNameTrans.hints.tooltip}" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.AccountNameTrans.validator}"/>
       </af:inputComboboxListOfValues>
-      <af:inputComboboxListOfValues id="contactNameTrans1Id"
-                                    popupTitle="Search and Select: #{bindings.ContactNameTrans1.hints.label}"
-                                    value="#{bindings.ContactNameTrans1.inputValue}"
-                                    label="#{bindings.ContactNameTrans1.hints.label}"
-                                    model="#{bindings.ContactNameTrans1.listOfValuesModel}"
-                                    required="#{bindings.ContactNameTrans1.hints.mandatory}"
-                                    columns="#{bindings.ContactNameTrans1.hints.displayWidth}"
-                                    shortDesc="#{bindings.ContactNameTrans1.hints.tooltip}" contentStyle="width:240px;">
-        <f:validator binding="#{bindings.ContactNameTrans1.validator}"/>
+      <af:inputComboboxListOfValues id="contactNameTransId"
+                                    popupTitle="Search and Select: #{bindings.ContactNameTrans.hints.label}"
+                                    value="#{bindings.ContactNameTrans.inputValue}"
+                                    label="#{bindings.ContactNameTrans.hints.label}"
+                                    model="#{bindings.ContactNameTrans.listOfValuesModel}"
+                                    required="#{bindings.ContactNameTrans.hints.mandatory}"
+                                    columns="#{bindings.ContactNameTrans.hints.displayWidth}"
+                                    shortDesc="#{bindings.ContactNameTrans.hints.tooltip}" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.ContactNameTrans.validator}"/>
       </af:inputComboboxListOfValues>
-      <af:inputText value="#{bindings.Priority.inputValue}" label="#{bindings.Priority.hints.label}"
-                    required="#{bindings.Priority.hints.mandatory}" columns="#{bindings.Priority.hints.displayWidth}"
-                    maximumLength="#{bindings.Priority.hints.precision}" shortDesc="#{bindings.Priority.hints.tooltip}"
-                    id="it3" contentStyle="width:240px;">
+      <af:selectOneChoice value="#{bindings.Priority.inputValue}" label="#{bindings.Priority.label}"
+                          required="#{bindings.Priority.hints.mandatory}" shortDesc="#{bindings.Priority.hints.tooltip}"
+                          id="soc1" contentStyle="width:240px;">
+        <f:selectItems value="#{bindings.Priority.items}" id="si1"/>
         <f:validator binding="#{bindings.Priority.validator}"/>
-      </af:inputText>
+      </af:selectOneChoice>
       <af:inputText value="#{bindings.PercentageCompletion.inputValue}"
                     label="#{bindings.PercentageCompletion.hints.label}"
                     required="#{bindings.PercentageCompletion.hints.mandatory}"
                     columns="#{bindings.PercentageCompletion.hints.displayWidth}"
                     maximumLength="#{bindings.PercentageCompletion.hints.precision}"
-                    shortDesc="#{bindings.PercentageCompletion.hints.tooltip}" id="it4" contentStyle="width:240px;">
+                    shortDesc="#{bindings.PercentageCompletion.hints.tooltip}" id="it3" contentStyle="width:240px;">
         <f:validator binding="#{bindings.PercentageCompletion.validator}"/>
         <af:convertNumber groupingUsed="false" pattern="#{bindings.PercentageCompletion.format}"/>
       </af:inputText>

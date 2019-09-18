@@ -3,8 +3,14 @@
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelBox id="pb1">
     <f:facet name="toolbar">
-      <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create"
-                 disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="create"/>
+      <af:panelGroupLayout id="pgl2">
+        <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create"
+                   disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="create"/>
+        <af:button actionListener="#{bindings.Delete.execute}" text="Delete" disabled="#{!bindings.Delete.enabled}"
+                   id="b2">
+          <af:showPopupBehavior popupId="p1" triggerType="action"/>
+        </af:button>
+      </af:panelGroupLayout>
     </f:facet>
     <af:panelGroupLayout layout="vertical" id="pgl1">
       <af:panelHeader text="Tasks" id="ph1">
@@ -18,7 +24,7 @@
                 selectionListener="#{bindings.TasksView2.collectionModel.makeCurrent}" rowSelection="single"
                 fetchSize="#{bindings.TasksView2.rangeSize}" filterModel="#{bindings.NameQuery.queryDescriptor}"
                 filterVisible="true" queryListener="#{bindings.NameQuery.processQuery}" varStatus="vs" id="resId1"
-                partialTriggers="::b1" columnStretching="last">
+                partialTriggers="::b1 ::b2" columnStretching="last">
         <af:column sortProperty="#{bindings.TasksView2.hints.TaskName.name}" filterable="true" sortable="true"
                    headerText="#{bindings.TasksView2.hints.TaskName.label}" id="resId1c1">
           <af:link shortDesc="#{bindings.TasksView2.hints.TaskName.tooltip}" id="ot1" text="#{row.TaskName}"
@@ -64,5 +70,12 @@
         </af:column>
       </af:table>
     </af:panelGroupLayout>
+    <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+      <af:dialog id="d1" dialogListener="#{backingBeanScope.backingBeanOfTaskDelete.deleteNotes}"
+                 title="Delete Confirmation">
+        <f:facet name="buttonBar"/>
+        <af:outputText value="Are you sure you want to delete #{bindings.TaskName.inputValue}?" id="ot8"/>
+      </af:dialog>
+    </af:popup>
   </af:panelBox>
 </ui:composition>

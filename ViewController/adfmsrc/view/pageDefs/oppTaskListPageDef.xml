@@ -23,5 +23,13 @@
       </nodeDefinition>
     </tree>
     <action IterBinding="TasksView2Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TasksView2Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <attributeValues IterBinding="TasksView2Iterator" id="TaskName">
+      <AttrNames>
+        <Item Value="TaskName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
