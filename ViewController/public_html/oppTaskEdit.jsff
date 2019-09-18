@@ -42,7 +42,7 @@
                                     label="#{bindings.ContactNameTrans.hints.label}"
                                     model="#{bindings.ContactNameTrans.listOfValuesModel}"
                                     required="#{bindings.ContactNameTrans.hints.mandatory}"
-                                    columns="#{bindings.ContactNameTrans.hints.displayWidth}"
+                                    columns="20"
                                     shortDesc="#{bindings.ContactNameTrans.hints.tooltip}" contentStyle="width:240px;">
         <f:validator binding="#{bindings.ContactNameTrans.validator}"/>
       </af:inputComboboxListOfValues>
