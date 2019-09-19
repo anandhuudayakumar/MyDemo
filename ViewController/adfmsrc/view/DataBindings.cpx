@@ -20,6 +20,11 @@
     <page path="/oppTaskList.jsff" usageId="view_oppTaskListPageDef"/>
     <page path="/oppTaskCreate.jsff" usageId="view_oppTaskCreatePageDef"/>
     <page path="/oppTaskEdit.jsff" usageId="view_oppTaskEditPageDef"/>
+    <page path="/opportunityAppointmentLIst.jsff" usageId="view_opportunityAppointmentLIstPageDef"/>
+    <page path="/opportunityAppointmentCreate.jsff" usageId="view_opportunityAppointmentCreatePageDef"/>
+    <page path="/opportunityAppointmentEdit.jsff" usageId="view_opportunityAppointmentEditPageDef"/>
+    <page path="/UserInviteesAdd.jsff" usageId="view_UserInviteesAddPageDef"/>
+    <page path="/ContactInviteesAdd.jsff" usageId="view_ContactInviteesAddPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_opportunityListPageDef" path="view.pageDefs.opportunityListPageDef"/>
@@ -35,6 +40,11 @@
     <page id="view_oppTaskListPageDef" path="view.pageDefs.oppTaskListPageDef"/>
     <page id="view_oppTaskCreatePageDef" path="view.pageDefs.oppTaskCreatePageDef"/>
     <page id="view_oppTaskEditPageDef" path="view.pageDefs.oppTaskEditPageDef"/>
+    <page id="view_opportunityAppointmentLIstPageDef" path="view.pageDefs.opportunityAppointmentLIstPageDef"/>
+    <page id="view_opportunityAppointmentCreatePageDef" path="view.pageDefs.opportunityAppointmentCreatePageDef"/>
+    <page id="view_opportunityAppointmentEditPageDef" path="view.pageDefs.opportunityAppointmentEditPageDef"/>
+    <page id="view_UserInviteesAddPageDef" path="view.pageDefs.UserInviteesAddPageDef"/>
+    <page id="view_ContactInviteesAddPageDef" path="view.pageDefs.ContactInviteesAddPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.eo"

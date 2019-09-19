@@ -30,6 +30,7 @@
                         shortDesc="#{bindings.OppName.hints.tooltip}" id="it1" contentStyle="width:240px;">
             <f:validator binding="#{bindings.OppName.validator}"/>
           </af:inputText>
+          <af:spacer width="10" height="10" id="s7"/>
           <af:selectOneChoice value="#{bindings.Accountid.inputValue}" label="#{bindings.Accountid.label}"
                               required="#{bindings.Accountid.hints.mandatory}"
                               shortDesc="#{bindings.Accountid.hints.tooltip}" id="soc1" contentStyle="width:240px;">
@@ -95,13 +96,14 @@
             <f:selectItems value="#{bindings.RiskLevel.items}" id="si6"/>
             <f:validator binding="#{bindings.RiskLevel.validator}"/>
           </af:selectOneChoice>
-          <af:spacer width="10" height="10" id="s4"/>
+          <af:spacer width="10" height="10" id="s8"/>
           <af:selectOneChoice value="#{bindings.DecisionLevel.inputValue}" label="#{bindings.DecisionLevel.label}"
                               required="#{bindings.DecisionLevel.hints.mandatory}"
                               shortDesc="#{bindings.DecisionLevel.hints.tooltip}" id="soc7" contentStyle="width:240px;">
             <f:selectItems value="#{bindings.DecisionLevel.items}" id="si7"/>
             <f:validator binding="#{bindings.DecisionLevel.validator}"/>
           </af:selectOneChoice>
+          <af:spacer width="10" height="10" id="s4"/>
           <af:inputText value="#{bindings.EstimatedDuration.inputValue}"
                         label="#{bindings.EstimatedDuration.hints.label}"
                         required="#{bindings.EstimatedDuration.hints.mandatory}"
@@ -123,7 +125,9 @@
       <af:showDetailItem id="tab2" text="Contact" icon="/contactIcon.png">
         <af:region value="#{bindings.OppContactList1.regionModel}" id="r2"/>
       </af:showDetailItem>
-      <af:showDetailItem id="tab3" text="Appointment" icon="/appointmentIcon.png"/>
+      <af:showDetailItem id="tab3" text="Appointment" icon="/appointmentIcon.png">
+        <af:region value="#{bindings.opportunityAppointmentTAskFlow1.regionModel}" id="r5"/>
+      </af:showDetailItem>
       <af:showDetailItem id="tab4" text="Task" icon="/tasksIcon.png">
         <af:region value="#{bindings.opportunityTask1.regionModel}" id="r4"/>
       </af:showDetailItem>

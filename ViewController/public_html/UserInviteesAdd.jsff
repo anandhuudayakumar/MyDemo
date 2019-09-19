@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox text="Add User" id="pb1">
+    <f:facet name="toolbar">
+      <af:panelGroupLayout id="pgl1">
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
+                   id="b1" action="backUser"/>
+        <af:button actionListener="#{bindings.Rollback.execute}" text="Back" disabled="#{!bindings.Rollback.enabled}"
+                   immediate="true" id="b2" action="backUser">
+          <af:resetActionListener/>
+        </af:button>
+      </af:panelGroupLayout>
+    </f:facet>
+    <af:panelFormLayout id="pfl1">
+      <af:inputComboboxListOfValues id="nameId" popupTitle="Search and Select: #{bindings.Name.hints.label}"
+                                    value="#{bindings.Name.inputValue}" label="#{bindings.Name.hints.label}"
+                                    model="#{bindings.Name.listOfValuesModel}"
+                                    required="#{bindings.Name.hints.mandatory}"
+                                    columns="#{bindings.Name.hints.displayWidth}"
+                                    shortDesc="#{bindings.Name.hints.tooltip}">
+        <f:validator binding="#{bindings.Name.validator}"/>
+      </af:inputComboboxListOfValues>
+    </af:panelFormLayout>
+  </af:panelBox>
+</ui:composition>

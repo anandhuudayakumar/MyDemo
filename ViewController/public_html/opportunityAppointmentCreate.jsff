@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox text="Create Appointment" id="pb1">
+    <f:facet name="toolbar">
+      <af:panelGroupLayout id="pgl1">
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" 
+                   id="b1" action="backCreate"/>
+        <af:button actionListener="#{bindings.Rollback.execute}" text="Back"
+                   immediate="true" id="b2" action="backCreate">
+          <af:resetActionListener/>
+        </af:button>
+      </af:panelGroupLayout>
+    </f:facet>
+    <af:panelFormLayout id="pfl1">
+      <af:inputText value="#{bindings.AppName.inputValue}" label="#{bindings.AppName.hints.label}"
+                    required="#{bindings.AppName.hints.mandatory}" columns="#{bindings.AppName.hints.displayWidth}"
+                    maximumLength="#{bindings.AppName.hints.precision}" shortDesc="#{bindings.AppName.hints.tooltip}"
+                    id="it1" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.AppName.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.AppDescription.inputValue}" label="#{bindings.AppDescription.hints.label}"
+                    required="#{bindings.AppDescription.hints.mandatory}"
+                    columns="#{bindings.AppDescription.hints.displayWidth}"
+                    maximumLength="#{bindings.AppDescription.hints.precision}"
+                    shortDesc="#{bindings.AppDescription.hints.tooltip}" id="it2" contentStyle="width:240px;" rows="4">
+        <f:validator binding="#{bindings.AppDescription.validator}"/>
+      </af:inputText>
+      <af:inputDate value="#{bindings.StartDate.inputValue}" label="#{bindings.StartDate.hints.label}"
+                    required="#{bindings.StartDate.hints.mandatory}" columns="#{bindings.StartDate.hints.displayWidth}"
+                    shortDesc="#{bindings.StartDate.hints.tooltip}" id="id1" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.StartDate.validator}"/>
+        <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+      </af:inputDate>
+      <af:inputDate value="#{bindings.EndDate.inputValue}" label="#{bindings.EndDate.hints.label}"
+                    required="#{bindings.EndDate.hints.mandatory}" columns="#{bindings.EndDate.hints.displayWidth}"
+                    shortDesc="#{bindings.EndDate.hints.tooltip}" id="id2" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.EndDate.validator}"/>
+        <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+      </af:inputDate>
+      <af:inputText value="#{bindings.Location.inputValue}" label="#{bindings.Location.hints.label}"
+                    required="#{bindings.Location.hints.mandatory}" columns="#{bindings.Location.hints.displayWidth}"
+                    maximumLength="#{bindings.Location.hints.precision}" shortDesc="#{bindings.Location.hints.tooltip}"
+                    id="it3" contentStyle="width:240px;">
+        <f:validator binding="#{bindings.Location.validator}"/>
+      </af:inputText>
+    </af:panelFormLayout>
+  </af:panelBox>
+</ui:composition>

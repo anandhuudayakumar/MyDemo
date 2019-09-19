@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="opportunityAppointmentEditPageDef" Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AppointmentView2" RangeSize="25" DataControl="AppModuleDataControl" id="AppointmentView2Iterator"/>
+    <iterator Binds="UserInviteesView5" RangeSize="25" DataControl="AppModuleDataControl"
+              id="UserInviteesView5Iterator"/>
+    <iterator Binds="ContactInviteesView4" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ContactInviteesView4Iterator"/>
+    <searchRegion Criteria="User_Name" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="UserInviteesView5Iterator" id="UserNameQuery"/>
+    <searchRegion Criteria="Contact_Name" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ContactInviteesView4Iterator" id="ContactNameQuery"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="AppointmentView2Iterator" id="AppName">
+      <AttrNames>
+        <Item Value="AppName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppointmentView2Iterator" id="AppDescription">
+      <AttrNames>
+        <Item Value="AppDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppointmentView2Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppointmentView2Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppointmentView2Iterator" id="Location">
+      <AttrNames>
+        <Item Value="Location"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="ContactInviteesView4Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="UserInviteesView5Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <tree IterBinding="UserInviteesView5Iterator" id="UserInviteesView5">
+      <nodeDefinition DefName="model.vo.UserInviteesView" Name="UserInviteesView50">
+        <AttrNames>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ContactInviteesView4Iterator" id="ContactInviteesView4">
+      <nodeDefinition DefName="model.vo.ContactInviteesView" Name="ContactInviteesView40">
+        <AttrNames>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="UserInviteesView5Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="UserInviteesView5Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ContactInviteesView4Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="ContactInviteesView4Iterator" id="Name1">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

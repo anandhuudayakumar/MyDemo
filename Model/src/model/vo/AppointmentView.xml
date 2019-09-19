@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="bindAppointmentName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="Appointment"
     Entity="model.eo.Appointment"/>
@@ -102,6 +106,42 @@
     EntityAttrName="ContactId"
     EntityUsage="Appointment"
     AliasName="CONTACT_ID"/>
+  <ViewCriteria
+    Name="Name"
+    ViewObjectName="model.vo.AppointmentView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AppointmentViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="AppName"
+        ViewAttribute="AppName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":bindAppointmentName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ContactInviteesView"
     ViewLink="model.vo.Inviteesv1AccAppointmentFkLink"

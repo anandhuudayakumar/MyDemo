@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="opportunityAppointmentLIstPageDef" Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AppointmentView2" RangeSize="25" DataControl="AppModuleDataControl" id="AppointmentView2Iterator"/>
+    <searchRegion Criteria="Name" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="AppointmentView2Iterator" id="NameQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AppointmentView2Iterator" id="AppointmentView2">
+      <nodeDefinition DefName="model.vo.AppointmentView" Name="AppointmentView20">
+        <AttrNames>
+          <Item Value="AppName"/>
+          <Item Value="AppDescription"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="Location"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AppointmentView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="AppointmentView2Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="AppointmentView2Iterator" id="AppName">
+      <AttrNames>
+        <Item Value="AppName"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>
