@@ -76,7 +76,7 @@
         <af:outputText value="Are you sure you want to delete " id="ot7"/>
         <af:outputText value="#{bindings.ProductId.inputValue}" shortDesc="#{bindings.ProductId.hints.tooltip}"
                        id="ot8" inlineStyle="color:Red;"/>
-        <af:outputText value="?" id="ot9"/>
+        g<af:outputText value="?" id="ot9"/>
       </af:dialog>
     </af:popup>
   </af:panelBox>

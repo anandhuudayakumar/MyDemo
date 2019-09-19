@@ -280,6 +280,8 @@
           ResId="model.vo.TasksView.AccountNameTrans_LABEL"/>
         <CONTROLTYPE
           Value="combo_lov"/>
+        <DISPLAYWIDTH
+          Value="30"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -298,6 +300,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.vo.TasksView.ContactNameTrans_LABEL"/>
+        <DISPLAYWIDTH
+          Value="10"/>
         <CONTROLTYPE
           Value="combo_lov"/>
       </SchemaBasedProperties>

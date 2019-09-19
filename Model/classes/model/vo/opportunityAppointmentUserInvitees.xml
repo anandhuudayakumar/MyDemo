@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="opportunityAppointmentUserInvitees"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.eo.opportunityUserInvitees">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.vo.opportunityAppointmentUserInvitees_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="AppointmentView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.vo.AppointmentView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="AppointmentView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.vo.AppointmentView.AppId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="UserInviteesView1"
+    Cardinality="-1"
+    Owner="model.vo.UserInviteesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="UserInviteesView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.vo.UserInviteesView.AppointmentId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

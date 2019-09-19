@@ -278,6 +278,13 @@
     AssociationOtherEnd="model.eo.OpportunityTaskAssociation.Opportunities"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Appointment"
+    Association="model.eo.opportunityAppointmentAssociation"
+    AssociationEnd="model.eo.opportunityAppointmentAssociation.Appointment"
+    AssociationOtherEnd="model.eo.opportunityAppointmentAssociation.Opportunities"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="OpportunitiesAccountidCheck">
     <DesignTime>

@@ -172,6 +172,21 @@
   <ViewUsage
     Name="TasksView2"
     ViewObjectName="model.vo.TasksView"/>
+  <ViewUsage
+    Name="AppointmentView2"
+    ViewObjectName="model.vo.AppointmentView"/>
+  <ViewUsage
+    Name="UserAccountsView2"
+    ViewObjectName="model.vo.UserAccountsView"/>
+  <ViewUsage
+    Name="SalesTeamOppurtunityView4"
+    ViewObjectName="model.vo.SalesTeamOppurtunityView"/>
+  <ViewUsage
+    Name="ContactInviteesView4"
+    ViewObjectName="model.vo.ContactInviteesView"/>
+  <ViewUsage
+    Name="UserInviteesView5"
+    ViewObjectName="model.vo.UserInviteesView"/>
   <ViewLinkUsage
     Name="ContinvcontactsFkv2Link1"
     ViewLinkObjectName="model.vo.ContinvcontactsFkv2Link"
@@ -333,5 +348,29 @@
     ViewLinkObjectName="model.vo.opportunityTaskViewLink"
     SrcViewUsageName="model.eo.AppModule.OpportunitiesView1"
     DstViewUsageName="model.eo.AppModule.TasksView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="opportunityAppointmentViewLink1"
+    ViewLinkObjectName="model.vo.opportunityAppointmentViewLink"
+    SrcViewUsageName="model.eo.AppModule.OpportunitiesView1"
+    DstViewUsageName="model.eo.AppModule.AppointmentView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="UserintInteractionFkv1Link2"
+    ViewLinkObjectName="model.vo.UserintInteractionFkv1Link"
+    SrcViewUsageName="model.eo.AppModule.UserAccountsView2"
+    DstViewUsageName="model.eo.AppModule.SalesTeamOppurtunityView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="opportunityAppointmentContactInvitees1"
+    ViewLinkObjectName="model.vo.opportunityAppointmentContactInvitees"
+    SrcViewUsageName="model.eo.AppModule.AppointmentView2"
+    DstViewUsageName="model.eo.AppModule.ContactInviteesView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="opportunityAppointmentUserInvitees2"
+    ViewLinkObjectName="model.vo.opportunityAppointmentUserInvitees"
+    SrcViewUsageName="model.eo.AppModule.AppointmentView2"
+    DstViewUsageName="model.eo.AppModule.UserInviteesView5"
     Reversed="false"/>
 </AppModule>

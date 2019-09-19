@@ -300,10 +300,10 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.vo.TasksView.ContactNameTrans_LABEL"/>
-        <CONTROLTYPE
-          Value="combo_lov"/>
         <DISPLAYWIDTH
           Value="10"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

@@ -87,6 +87,13 @@
     AssociationOtherEnd="model.eo.InviteesUserAccountsFkAssoc.UserInvitees"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Appointment1"
+    Association="model.eo.opportunityUserInvitees"
+    AssociationEnd="model.eo.opportunityUserInvitees.Appointment1"
+    AssociationOtherEnd="model.eo.opportunityUserInvitees.UserInvitees1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="InviteesPk"
     PrimaryKey="true">
@@ -118,6 +125,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.eo.UserInvitees.UserId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_UserInvitees">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ACCOUNT_APPOINTMENT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_USER_INVITEES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.UserInvitees.AppointmentId"/>
     </AttrArray>
   </Key>
 </Entity>

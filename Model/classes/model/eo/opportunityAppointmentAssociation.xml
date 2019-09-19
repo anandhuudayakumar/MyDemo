@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="opportunityAppointmentAssociation"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Opportunities"
+    Cardinality="1"
+    Source="true"
+    Owner="model.eo.Opportunities"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Opportunities"/>
+      <Attr Name="_foreignKey" Value="model.eo.Opportunities.OpportunitiesPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.Opportunities.OppId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Appointment"
+    Cardinality="-1"
+    Owner="model.eo.Appointment">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Appointment"/>
+      <Attr Name="_foreignKey" Value="model.eo.Appointment.fk_Appointment"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.Appointment.OppurtunityId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

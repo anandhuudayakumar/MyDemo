@@ -28,7 +28,8 @@
     PrecisionRule="true"
     EntityAttrName="AppId"
     EntityUsage="Appointment"
-    AliasName="APP_ID"/>
+    AliasName="APP_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="AppDescription"
     PrecisionRule="true"
@@ -109,6 +110,16 @@
   <ViewLinkAccessor
     Name="UserInviteesView"
     ViewLink="model.vo.InviteesAccAppointmentFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ContactInviteesView1"
+    ViewLink="model.vo.opportunityAppointmentContactInvitees"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UserInviteesView1"
+    ViewLink="model.vo.opportunityAppointmentUserInvitees"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>
